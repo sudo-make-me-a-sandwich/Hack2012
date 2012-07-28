@@ -12,8 +12,20 @@
 </head>
 <body>
 	<div class="pageContainer">
-		<div class="header">
-			<div class="logo">
+		<div class="row header">
+			<div class="content">
+				<div class="threeCol">
+					<a class="logo" href="/"><img src="/images/logo.png" alt="/txt" /></a>
+				</div>
+				
+				<div class="nineCol last">
+					<ul class="nav">
+						<li><a href="/">Home</a></li>
+						<li><a href="/messages/">Messages</a></li>
+						<li><a href="/profile/">Profile</a></li>
+						<li><a href="/help/">Help</a></li>
+					</ul>
+				</div>
 			</div>
 		</div>
 		
@@ -26,4 +38,4 @@
 	<!-- SITE JS -->
 	<script src="/js/mediaqueries.js" type="text/javascript"></script>
 </body>
-</html>
+</html>	
