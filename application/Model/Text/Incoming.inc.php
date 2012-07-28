@@ -41,6 +41,11 @@ class Model_Text_Incoming
 		return false;
 	}
 	
+	/**
+	 * Parse the text command
+	 * 
+	 * @return bool
+	 */
 	private function parseCommand()
 	{
 		$spacePosition = strpos($this->_text, ' ');
@@ -51,7 +56,7 @@ class Model_Text_Incoming
 			$className = 'Model_Text_Command_' . $command;
 			$command = new $className();
 			
-			$command->run();
+			return $command->run();
 		}
 		
 		return false;

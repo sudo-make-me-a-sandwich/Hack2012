@@ -27,10 +27,11 @@ class Model_Text_Outgoing
 	/**
 	 * Sends the message
 	 * 
-	 * @return void
+	 * @return bool
 	 */
 	public function send()
 	{
 		echo $this->_text;
+		return true;
 	}
 }
