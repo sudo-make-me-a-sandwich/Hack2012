@@ -108,6 +108,12 @@ hr {
 	clear: both;
 }
 
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box; 
+}
+
 
 
 
@@ -190,4 +196,106 @@ a {
 
 a:hover {
 	color: #6FD0EA;
+}
+
+
+
+
+
+/*----------------------------------------------------------------------------------------------------------------*\
+	PAGE CONTAINERS
+\*----------------------------------------------------------------------------------------------------------------*/
+.row {
+	width: 100%;
+}
+
+.oneCol, .twoCol, .threeCol, .fourCol, .fiveCol, .sixCol, .sevenCol, .eightCol, .ninecCol, .tenCol, .elevenCol, .twelveCol {
+	width: 100%;
+}
+
+.row:after {
+	height: 0;
+	display: block;
+	content: "";
+	visibility: hidden;
+	clear: both;
+}
+
+.row .last {
+	margin-right: 0 !important;
+}
+
+
+
+
+
+/*----------------------------------------------------------------------------------------------------------------*\
+	MEDIA QUERIES
+\*----------------------------------------------------------------------------------------------------------------*/
+/* 320px */
+@media all and (min-width: 0px) {
+}
+
+/* 480px */
+@media all and (min-width: 480px) {
+}
+
+/* 600px */
+@media all and (min-width: 600px) {
+    .oneCol, .twoCol, .threeCol, .fourCol, .fiveCol, .sixCol, .sevenCol, .eightCol, .ninecCol, .tenCol, .elevenCol {
+		margin-right: 2%;
+		float: left;
+	}
+
+	.row .oneCol {
+		width: 6.5%;
+	}
+	
+	.row .twoCol {
+		width: 15%;
+	}
+	
+	.row .threeCol {
+		width: 23.5%;
+	}
+	
+	.row .fourCol {
+		width: 32%;
+	}
+	
+	.row .fiveCol {
+		width: 40.5%;
+	}
+	
+	.row .sixCol {
+		width: 49%;
+	}
+	
+	.row .sevenCol {
+		width: 57.5%;
+	}
+	
+	.row .eightCol {
+		width: 66%;
+	}
+	
+	.row .nineCol {
+		width: 74.5%;
+	}
+	
+	.row .tenCol {
+		width: 83%;
+	}
+	
+	.row .elevenCol {
+		width: 91.5%;
+	}
+}
+
+/* 768px */
+@media all and (min-width: 768px) {
+}
+
+/* 900px */
+@media all and (min-width: 900px) { 
 }
