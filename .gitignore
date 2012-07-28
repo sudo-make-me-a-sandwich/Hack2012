@@ -2,3 +2,4 @@
 /.buildpath
 /.projectlogs/access.log
 logs/error.log
+.project
