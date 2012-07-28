@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.8, created on 2012-07-28 21:14:33
+<?php /* Smarty version Smarty-3.1.8, created on 2012-07-28 21:41:08
          compiled from "/Users/sam/Sites/Hack2012/application/Views/Smarty/Templates/Controller/Default/index.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:7936927795013e282c4a734-05076730%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '96a6f28349bbe5ad39d992aa252ac5aa976641d4' => 
     array (
       0 => '/Users/sam/Sites/Hack2012/application/Views/Smarty/Templates/Controller/Default/index.tpl',
-      1 => 1343500170,
+      1 => 1343508013,
       2 => 'file',
     ),
     'dea4803fcd3620f29a94917cbd8467d57a40c208' => 
@@ -57,6 +57,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 		</div>
 		
 		
+<?php echo $_smarty_tpl->tpl_vars['form']->value;?>
+
 
 		
 		<div class="footer">
