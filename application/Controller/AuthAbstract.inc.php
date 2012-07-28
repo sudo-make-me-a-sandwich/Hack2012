@@ -9,9 +9,14 @@
 
 abstract class Controller_AuthAbstract extends LSF_Controller
 {
+	/**
+	 * (non-PHPdoc)
+	 * @see framework/LSF_Controller::start()
+	 */
 	public function start()
 	{
-		if (!$this->isAuthed()) {
+		if (!$this->isAuthed())
+		{
 			$this->authFailed();
 			return;
 		}
@@ -19,11 +24,22 @@ abstract class Controller_AuthAbstract extends LSF_Controller
 		return parent::start();
 	}
 	
+	/**
+	 * Returns whether or not the user is auth'd
+	 * 
+	 * @return bool
+	 * @todo implement this
+	 */
 	private function isAuthed()
 	{
-		return false;
+		return true;
 	}
 	
+	/**
+	 * Do this if auth failed (oh noes!)
+	 * 
+	 * @return void
+	 */
 	private function authFailed()
 	{
 		$this->redirect();
