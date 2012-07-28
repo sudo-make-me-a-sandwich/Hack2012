@@ -34,6 +34,7 @@ class Controller_Default extends LSF_Controller
 				if ($user->auth($form->getElementValue('password')))
 				{
 					LSF_Session::GetSession()->phonenumber = $form->getElementValue('phonenumber');
+					LSF_Session::GetSession()->password = $user->hashPassword($form->getElementValue('password'));
 					$this->redirect('messages');
 				}
 				else {

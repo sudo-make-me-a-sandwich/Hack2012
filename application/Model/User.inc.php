@@ -67,11 +67,16 @@ class Model_User extends Model_MongoAbstract
 	/**
 	 * Check the users credentials
 	 * 
+	 * @param string $password
+	 * @param bool $passingHash
 	 * @return bool
 	 */
-	public function auth($password)
+	public function auth($password, $passingHash=false)
 	{
-		return $this->getPhoneNumber() && $this->getValue('password') == $this->hashPassword($password);
+		if (!$passingHash) {
+			$password = $this->hashPassword($password);
+		}
+		return $this->getPhoneNumber() && $this->getValue('password') == $password;
 	}
 	
 	/**
