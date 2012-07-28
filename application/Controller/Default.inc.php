@@ -17,6 +17,23 @@ class Controller_Default extends LSF_Controller
 	 */
 	protected function indexAction()
 	{
+		$form = new Form_Message();
+		$this->view->form = $form->render();
 		
+		if ($form->formSubmitted() && $form->formValidated())
+		{
+			/**
+			 * Temp code
+			 */
+			$user = new Model_User();
+			if (!$user->loadByPhonenumber(LSF_Session::GetSession()->phonenumber)) {
+				$user->setPhoneNumber(LSF_Session::GetSession()->phonenumber);
+				$user->save();
+			}
+			
+			LSF_Session::GetSession()->phonenumber = $form->getElementValue('phonenumber');
+			
+			$this->redirect('messages');
+		}
 	}
 }
