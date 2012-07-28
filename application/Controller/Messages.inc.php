@@ -21,9 +21,10 @@ class Controller_Messages extends LSF_Controller
 		
 		if ($form->formSubmitted() && $form->formValidated())
 		{
-			$message = new Model_Message();
-			$message->setText($form->getElementValue('message'));
-			$this->view->messageSent = $message->save()->success();
+			$text = new Model_Text_Incoming();
+			$text->setText($form->getElementValue('message'));
+			
+			$this->view->messageSent = $text->process();
 		}
 	}
 }

@@ -16,6 +16,11 @@ class Model_Message extends Model_MongoAbstract
 			'sessionId' => null,
 		);
 	
+	/**
+	 * Returns the message ID
+	 * 
+	 * @return MongoID
+	 */
 	public function getId()
 	{
 		return isset($this->_values['_id']) ? $this->_values['_id'] : null;
