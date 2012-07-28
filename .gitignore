@@ -3,3 +3,5 @@
 /.projectlogs/access.log
 logs/error.log
 /.project
+/public/index.php
+/piblic/.htaccess
