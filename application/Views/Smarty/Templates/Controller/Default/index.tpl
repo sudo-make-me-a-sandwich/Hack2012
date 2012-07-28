@@ -4,7 +4,7 @@
 	<div class="row">
 		<div class="content">
 			<div class="twelveCol">
-				<img src="/images/banner.jpg" alt="Welcome to /txt" />
+				<img class="banner" src="/images/banner.jpg" alt="Welcome to /txt" />
 			</div>
 		</div>
 	</div>
@@ -25,6 +25,12 @@
 			
 			<div class="fiveCol last">
 				<div class="loginForm">
+					{if $invalidLogin}
+						<div class="loginFail">
+							<p>Login failed, wrong phone number/password</p>
+						</div>
+					{/if}
+					
 					{$form}
 				</div>
 			</div>

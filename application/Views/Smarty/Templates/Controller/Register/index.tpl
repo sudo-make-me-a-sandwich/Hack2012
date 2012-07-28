@@ -10,7 +10,12 @@
 			
 			<div class="fiveCol last">
 				<div class="loginForm">
-					{$form}
+					{if $unableToRegister}
+						<h3>Already registered?</h3>
+						<p>It seems you have already registered</p>
+					{else}
+						{$form}
+					{/if}
 				</div>
 			</div>
 		</div>
