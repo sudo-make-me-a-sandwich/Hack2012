@@ -372,15 +372,19 @@ button:hover {
 /*----------------------------------------------------------------------------------------------------------------*\
 	HOME
 \*----------------------------------------------------------------------------------------------------------------*/
-.banner {
-	width: 100%;
-	height: 250px;
-	border: 1px solid #ccc;
-	
-	position: relative;
+.loginForm {
+	text-align: center;
 }
 
+.loginForm label {
+	padding-left: 5%;
+	
+	text-align: left;
+}
 
+.loginForm input {
+	width: 90%;
+}
 
 
 
