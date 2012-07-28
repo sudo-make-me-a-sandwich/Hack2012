@@ -11,13 +11,14 @@ abstract class Model_Text_Command_BaseAbstract
 	/**
 	 * Run the command
 	 * 
-	 * @return void
+	 * @return bool
 	 */
 	public function run()
 	{
 		$outgoingText = new Model_Text_Outgoing();
+		$outgoingText->setTo('07751651394');
 		$outgoingText->setText($this->getResponse());
-		$outgoingText->send();
+		return $outgoingText->send();
 	}
 	
 	/**
