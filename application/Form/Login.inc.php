@@ -18,7 +18,7 @@ class Form_Login extends LSF_Form
 		
 		$this->addElement(
 			$element->setName('phonenumber')
-			->setLabel('Enter phonenumber')
+			->setLabel('Phone number')
 			->setRequired()
 		);
 		
@@ -27,7 +27,7 @@ class Form_Login extends LSF_Form
 		$this->addElement(
 			$element->setName('password')
 			->setType('password')
-			->setLabel('Password (leave blank if not registered)')
+			->setLabel('Password')
 		);
 	}
 }

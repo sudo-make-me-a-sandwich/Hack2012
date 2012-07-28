@@ -17,6 +17,30 @@ class Controller_Default extends LSF_Controller
 	 */
 	protected function indexAction()
 	{
+		$form = new Form_Login();
+		$this->view->form = $form->render();
 		
+		if ($form->formSubmitted() && $form->formValidated())
+		{
+			/**
+			 * Temp code
+			 */
+			$user = new Model_User();
+			if (!$user->loadByPhonenumber($form->getElementValue('phonenumber'))) {
+				$this->redirect('register', null, null, '?phonenumber=' . $form->getElementValue('phonenumber'));
+			}
+			else
+			{
+				if ($user->auth($form->getElementValue('password')))
+				{
+					LSF_Session::GetSession()->phonenumber = $form->getElementValue('phonenumber');
+					LSF_Session::GetSession()->password = $user->hashPassword($form->getElementValue('password'));
+					$this->redirect('messages');
+				}
+				else {
+					$this->view->invalidLogin = true;
+				}
+			}
+		}
 	}
 }
