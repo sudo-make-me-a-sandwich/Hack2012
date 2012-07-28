@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.8, created on 2012-07-28 20:41:49
+<?php /* Smarty version Smarty-3.1.8, created on 2012-07-28 21:14:33
          compiled from "/Users/sam/Sites/Hack2012/application/Views/Smarty/Templates/Controller/Default/index.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:7936927795013e282c4a734-05076730%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -13,7 +13,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'dea4803fcd3620f29a94917cbd8467d57a40c208' => 
     array (
       0 => '/Users/sam/Sites/Hack2012/application/Views/Smarty/Templates/layout.tpl',
-      1 => 1343504085,
+      1 => 1343505682,
       2 => 'file',
     ),
   ),
@@ -39,8 +39,20 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 </head>
 <body>
 	<div class="pageContainer">
-		<div class="header">
-			<div class="logo">
+		<div class="row header">
+			<div class="content">
+				<div class="threeCol">
+					<a class="logo" href="/"><img src="/images/logo.png" alt="/txt" /></a>
+				</div>
+				
+				<div class="nineCol last">
+					<ul class="nav">
+						<li><a href="/">Home</a></li>
+						<li><a href="/messages/">Messages</a></li>
+						<li><a href="/profile/">Profile</a></li>
+						<li><a href="/help/">Help</a></li>
+					</ul>
+				</div>
 			</div>
 		</div>
 		
@@ -54,4 +66,4 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 	<!-- SITE JS -->
 	<script src="/js/mediaqueries.js" type="text/javascript"></script>
 </body>
-</html><?php }} ?>
+</html>	<?php }} ?>
