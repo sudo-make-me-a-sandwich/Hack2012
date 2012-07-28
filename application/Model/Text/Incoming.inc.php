@@ -9,7 +9,21 @@
 class Model_Text_Incoming
 {
 	private
+		$_fromNumber,
 		$_text;
+	
+	/**
+	 * Set the "from" phone number
+	 * 
+	 * @param string $number
+	 * @return void
+	 */
+	public function setFrom($number)
+	{
+		if (is_numeric($number)) {
+			$this->_fromNumber = $number;
+		}
+	}
 	
 	/**
 	 * Set the incoming message text
@@ -56,7 +70,7 @@ class Model_Text_Incoming
 			$className = 'Model_Text_Command_' . $command;
 			$command = new $className();
 			
-			return $command->run();
+			return $command->setFrom($this->_fromNumber)->run();
 		}
 		
 		return false;

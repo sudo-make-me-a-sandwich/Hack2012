@@ -8,6 +8,24 @@
 
 abstract class Model_Text_Command_BaseAbstract
 {
+	private
+		$_fromNumber;
+	
+	/**
+	 * Set the "from" phone number
+	 * 
+	 * @param string $number
+	 * @return Model_Text_Command_BaseAbstract
+	 */
+	public function setFrom($number)
+	{
+		if (is_numeric($number)) {
+			$this->_fromNumber = $number;
+		}
+		
+		return $this;
+	}
+	
 	/**
 	 * Run the command
 	 * 
@@ -16,7 +34,7 @@ abstract class Model_Text_Command_BaseAbstract
 	public function run()
 	{
 		$outgoingText = new Model_Text_Outgoing();
-		$outgoingText->setTo('07751651394');
+		$outgoingText->setTo($this->_fromNumber);
 		$outgoingText->setText($this->getResponse());
 		return $outgoingText->send();
 	}

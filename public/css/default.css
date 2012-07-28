@@ -210,6 +210,8 @@ a:hover {
 .content {
 	max-width: 1000px;
 	margin: 0 auto;
+	
+	position: relative;
 }
 
 .row {
@@ -240,8 +242,38 @@ a:hover {
 	HEADER
 \*----------------------------------------------------------------------------------------------------------------*/
 .header {
+	min-height: 100px;
+	
 	background: #575757 url("../images/noise.png") repeat;
 }
+
+.header .logo {
+	position: absolute;
+	top: 10px;
+	left: 0;
+}
+
+
+
+
+/*----------------------------------------------------------------------------------------------------------------*\
+	NAV
+\*----------------------------------------------------------------------------------------------------------------*/
+.nav {
+	float: right;
+	
+	list-style: none;
+}
+
+.nav li {
+	display: inline-block;
+}
+
+.nav a {
+	color: #fff;
+}
+
+
 
 
 
@@ -258,7 +290,7 @@ a:hover {
 
 /* 600px */
 @media all and (min-width: 600px) {
-    .oneCol, .twoCol, .threeCol, .fourCol, .fiveCol, .sixCol, .sevenCol, .eightCol, .ninecCol, .tenCol, .elevenCol {
+    .oneCol, .twoCol, .threeCol, .fourCol, .fiveCol, .sixCol, .sevenCol, .eightCol, .nineCol, .tenCol, .elevenCol {
 		margin-right: 2%;
 		float: left;
 	}
