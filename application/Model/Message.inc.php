@@ -8,9 +8,29 @@
 
 class Model_Message extends Model_MongoAbstract
 {
-	private 
-		$_text,
-		$_from;
+	private
+		$_id,
+		$_values = array(
+			'text'		=> null,
+			'from'		=> null,
+			'sessionId' => null,
+		);
+	
+	public function getId()
+	{
+		return isset($this->_values['_id']) ? $this->_values['_id'] : null;
+	}
+		
+	/**
+	 * Load a message by ID
+	 * 
+	 * @param string $id
+	 * @return bool
+	 */
+	public function load($id)
+	{
+		$result = $this->getDb()->message->find(array('_id' => $id));
+	}
 	
 	/**
 	 * Save the message
@@ -19,18 +39,9 @@ class Model_Message extends Model_MongoAbstract
 	 */
 	public function save()
 	{
-		$this->getDb()->message->insert($this->getData());
-		return new LSF_Validation_Result();
-	}
-	
-	/**
-	 * Returns data for storage
-	 * 
-	 * @return array
-	 */
-	private function getData()
-	{
-		return array('text' => $this->_text);
+		if ($this->getDb()->message->insert($this->_values)) {
+			return new LSF_Validation_Result();
+		}
 	}
 	
 	/**
@@ -42,7 +53,12 @@ class Model_Message extends Model_MongoAbstract
 	public function setText($text)
 	{
 		if (is_string($text)) {
-			$this->_text = $text;
+			$this->_values['text'] = $text;
 		}
+	}
+	
+	public function getText()
+	{
+		return $this->_values['text'];
 	}
 }
