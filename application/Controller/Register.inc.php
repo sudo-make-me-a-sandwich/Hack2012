@@ -8,7 +8,7 @@
  * $Id: Default.inc.php 6 2009-08-26 11:11:40Z sam $
  */
 
-class Controller_Default extends LSF_Controller
+class Controller_Register extends LSF_Controller
 {
 	/**
 	 * Default index action
@@ -17,7 +17,8 @@ class Controller_Default extends LSF_Controller
 	 */
 	protected function indexAction()
 	{
-		$form = new Form_Login();
+		$form = new Form_Register();
+		$form->setElementValue('phonenumber', $this->getRequest()->getGetVar('phonenumber'));
 		$this->view->form = $form->render();
 		
 		if ($form->formSubmitted() && $form->formValidated())
@@ -27,21 +28,14 @@ class Controller_Default extends LSF_Controller
 			 */
 			$user = new Model_User();
 			if (!$user->loadByPhonenumber($form->getElementValue('phonenumber'))) {
-				$this->redirect('register', false, false, '?phonenumber=' . $form->getElementValue('phonenumber'));
-			}
-			else
-			{
-				if ($user->auth($form->getElementValue('password')))
-				{
-					LSF_Session::GetSession()->phonenumber = $form->getElementValue('phonenumber');
-					$this->redirect('messages');
-				}
-				else {
-					$this->view->invalidLogin = true;
-				}
+				$user->setPhoneNumber($form->getElementValue('phonenumber'));
+				$user->setPassword($form->getElementValue('password'));
+				$user->save();
 			}
 			
+			LSF_Session::GetSession()->phonenumber = $form->getElementValue('phonenumber');
 			
+			$this->redirect('messages');
 		}
 	}
 }

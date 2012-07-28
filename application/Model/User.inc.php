@@ -52,4 +52,35 @@ class Model_User extends Model_MongoAbstract
 	{
 		return $this->getValue('phonenumber');
 	}
+	
+	/**
+	 * Set the password
+	 * 
+	 * @param string $password
+	 * @return void
+	 */
+	public function setPassword($password)
+	{
+		$this->setValue('password', $this->hashPassword($password));
+	}
+	
+	/**
+	 * Check the users credentials
+	 * 
+	 * @return bool
+	 */
+	public function auth($password)
+	{
+		return $this->getPhoneNumber() && $this->getValue('password') == $this->hashPassword($password);
+	}
+	
+	/**
+	 * Returns a hashed version of the password
+	 * 
+	 * @return string
+	 */
+	public function hashPassword($password)
+	{
+		return hash('whirlpool', 'mooe23d' . $password . 'SamsAGay-123{}>£');
+	}
 }

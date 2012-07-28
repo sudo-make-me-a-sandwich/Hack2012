@@ -5,5 +5,5 @@ Message form
 		{include file="../elementsLoop.tpl"}
 	</ul>
 	
-	<button type="submit">Log in</button>
+	<button type="submit">Send message</button>
 </form>
