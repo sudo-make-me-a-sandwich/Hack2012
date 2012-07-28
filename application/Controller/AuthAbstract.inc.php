@@ -1,10 +1,9 @@
 <?php
 
 /**
- *
+ * Abstract auth controller
  *
  * @package
- * $Id$
  */
 
 abstract class Controller_AuthAbstract extends LSF_Controller
