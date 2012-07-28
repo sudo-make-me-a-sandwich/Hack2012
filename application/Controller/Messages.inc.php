@@ -7,7 +7,7 @@
  * @package /txt
  */
 
-class Controller_Messages extends LSF_Controller
+class Controller_Messages extends Controller_AuthAbstract
 {
 	/**
 	 * Default index action
