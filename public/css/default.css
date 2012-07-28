@@ -239,6 +239,10 @@ form ul {
 	list-style: none;
 }
 
+form a {
+	font-size: 0.8em;
+}
+
 button {
 	width: 150px;
 	height: 30px;

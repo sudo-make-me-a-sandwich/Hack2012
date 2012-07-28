@@ -3,5 +3,5 @@
 		{include file="../elementsLoop.tpl"}
 	</ul>
 	
-	<button type="submit">Send message</button>
+	<button type="submit">Register</button>
 </form>
