@@ -202,7 +202,7 @@ a {
 }
 
 a:hover {
-	color: #41C7E0;
+	color: #5193C9;
 }
 
 
@@ -236,7 +236,7 @@ form ul {
 }
 
 button {
-	width: 100px;
+	width: 150px;
 	height: 30px;
 	padding: 5px;
 	border: 0;
@@ -248,6 +248,10 @@ button {
 	font-size: 1em;
 	line-height: 1em;
 	text-align: center;
+}
+
+button:hover {
+	background: #5193C9;
 }
 
 
@@ -302,8 +306,7 @@ button {
 }
 
 .header .logo {
-	width: 157px;
-	height: 108px;
+	width: 107px;
 	margin: 0 auto;
 	display: block;
 }
@@ -328,7 +331,7 @@ button {
 	border-bottom: 0px solid #fff;
 	
 	color: #fff;
-	font-size: 1.1em;
+	font-size: 1em;
 	line-height: 1em;
 	
 	-moz-transition: all 0.1s ease-out;
@@ -358,7 +361,7 @@ button {
 }
 
 .loginForm {
-	width: 320px;
+	max-width: 280px;
 	height: 278px;
 	border: 1px solid #ccc;
 	
@@ -375,6 +378,7 @@ button {
 }
 
 .loginForm input {
+	width: 90%;
 	margin: 0 auto;
 	margin-bottom: 15px;
 }
@@ -456,6 +460,10 @@ button {
 	
 	.nav a {
 		font-size: 1.3em;
+	}
+	
+	.header .logo {
+		width: 157px;
 	}
 }
 
