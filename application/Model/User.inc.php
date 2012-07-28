@@ -14,6 +14,25 @@ class Model_User extends Model_MongoAbstract
 	}
 	
 	/**
+	 * Load a user by phonenumber
+	 * 
+	 * @param string $phonenumber
+	 * @return bool
+	 */
+	public function loadByPhonenumber($phonenumber)
+	{
+		$result = $this->getDb()->{$this->getCollectionName()}->findOne(array('phonenumber' => $phonenumber));
+		
+		if (!empty($result))
+		{
+			$this->setData($result);
+			return true;
+		}
+		
+		return false;
+	}
+	
+	/**
 	 * Set the phone number
 	 * 
 	 * @param string $text

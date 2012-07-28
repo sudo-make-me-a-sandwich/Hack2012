@@ -9,6 +9,9 @@
 
 abstract class Controller_AuthAbstract extends LSF_Controller
 {
+	private
+		$_user;
+		
 	/**
 	 * (non-PHPdoc)
 	 * @see framework/LSF_Controller::start()
@@ -32,7 +35,18 @@ abstract class Controller_AuthAbstract extends LSF_Controller
 	 */
 	private function isAuthed()
 	{
-		return true;
+		$this->_user = new Model_User();
+		return $this->_user->loadByPhonenumber(LSF_Session::GetSession()->phonenumber);
+	}
+	
+	/**
+	 * Returns the currently logged in user
+	 * 
+	 * @return Model_User
+	 */
+	protected function getUser()
+	{
+		return $this->_user;
 	}
 	
 	/**

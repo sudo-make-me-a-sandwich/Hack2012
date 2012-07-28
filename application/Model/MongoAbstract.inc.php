@@ -53,9 +53,13 @@ abstract class Model_MongoAbstract
 	{
 		$result = $this->getDb()->{$this->_collection}->findOne(array('_id' => new MongoId($id)));
 		
-		if (!empty($result)) {
-			$this->_values = $result;
+		if (!empty($result))
+		{
+			$this->setData($result);
+			return true;
 		}
+		
+		return false;
 	}
 	
 	/**
@@ -65,7 +69,7 @@ abstract class Model_MongoAbstract
 	 */
 	public function save()
 	{
-		if ($this->getDb()->{$this->_collection}->insert($this->_values)) {
+		if ($this->getDb()->{$this->_collection}->insert($this->getData())) {
 			return new LSF_Validation_Result();
 		}
 	}
@@ -107,6 +111,17 @@ abstract class Model_MongoAbstract
 	protected function setValue($key, $value)
 	{
 		$this->_values[$key] = $value;
+	}
+	
+	/**
+	 * Overwrite the data for this document
+	 * 
+	 * @param array $data
+	 * @return void
+	 */
+	protected function setData(array $data)
+	{
+		$this->_values = $data;
 	}
 	
 	/**
