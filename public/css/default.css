@@ -1,0 +1,193 @@
+/*----------------------------------------------------------------------------------------------------------------*\
+	YETTI CSS RESET
+\*----------------------------------------------------------------------------------------------------------------*/
+a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, body, canvas, caption, center, cite, code, details,
+div, dd, del, dl, dfn, dt, em, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, html, i, iframe,
+img, input, ins, kbd, label, legend, li, mark, menu, nav, object, ol, p, pre, q, s, samp, section, small, span, strike, strong, sub,
+summary, sup, table, tbody, td, textarea, tfoot, th, thead, time, tr, tt, u, ul, var, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 1em;
+	vertical-align: baseline; 
+} 
+
+html {
+	font-size: 100%;
+    line-height: 1.5em;
+}
+
+/* ----- Typography ----- */
+strong, b, mark {
+	font-weight: bold; 
+	font-style: inherit;
+}
+
+em, i, cite, q, address, dfn, var {
+	font-style: italic; 
+	font-weight: inherit;
+}
+
+del, s {
+	text-decoration: line-through;
+}
+
+ins {
+	border-bottom: 1px solid #ccc; 
+	text-decoration: none;
+}
+
+pre, code, samp, kbd {
+	font-family: monospace;
+}
+
+/* ----- HTML 5 ----- */
+article, aside, details, dialog, figcaption, figure, footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+abbr[title], dfn[title] {
+	cursor: help; 
+	border-bottom: 1px dotted #ccc;
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+	content: '';
+}
+
+blockquote, q {
+	quotes: "" "";
+}
+
+/* ----- Links ----- */
+a, button, select {
+	cursor: pointer;
+}
+
+input, textarea {
+    cursor: text;
+}
+
+/* ----- Forms ----- */
+input, select, option, optgroup, textarea {
+	font: inherit;
+}
+
+input, select {
+    border: 1px solid #ccc;
+	vertical-align: middle;
+}
+
+/* ----- Tables ----- */
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+caption, th, td {
+	text-align: left; 
+	font-weight: normal; 
+	float: none !important;
+}
+
+table, th, td {
+	vertical-align: middle;
+}
+
+/* ----- Other ----- */
+hr {
+	height: 1px; 
+    margin: 20px 0; 
+	border-top: 1px solid #ccc; 
+	display: block;
+}
+
+.clear {
+	float: none;
+	clear: both;
+}
+
+
+
+
+
+/*----------------------------------------------------------------------------------------------------------------*\
+	DEFAULT TEXT
+\*----------------------------------------------------------------------------------------------------------------*/
+body {   
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	background: #1b1b1b;
+	color: #6c6c6c;
+    
+	position: relative;
+}
+
+h1, .h1 {
+    margin-bottom: 0.5em;
+	color: #01a7c7;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 2.5em;
+	line-height: 1.2em;
+	font-weight: normal;
+}
+
+h2, .h2 {
+    margin-bottom: 0.5em;
+	color: #01a7c7;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 1.8em;
+	line-height: 1.2em;
+	font-weight: normal;
+}
+
+h3, .h3 {
+    margin-bottom: 0.5em;
+	color: #01a7c7;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 1.6em;
+	line-height: 1.2em;
+	font-weight: normal;
+}
+
+h4, .h4 {
+    margin-bottom: 0.5em;
+	color: #01a7c7;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 1.4em;
+	line-height: 1.2em;
+	font-weight: normal;
+}
+
+h5, .h5 {
+    margin-bottom: 0.5em;
+	color: #01a7c7;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 1.2em;
+	line-height: 1em;
+	font-weight: normal;
+}
+
+h6, .h6 {
+    margin-bottom: 0.5em;
+	color: #01a7c7;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 1em;
+	line-height: 1em;
+	font-weight: normal;
+}
+
+a {
+	color: #01a7c7;
+	text-decoration: none;
+    
+    -moz-transition: all 0.2s ease-out;
+	-webkit-transition: all 0.2s ease-out;
+	-o-transition: all 0.2s ease-out;
+	-ms-transition: all 0.2s ease-out;
+	transition: all 0.2s ease-out;
+}
+
+a:hover {
+	color: #6FD0EA;
+}
