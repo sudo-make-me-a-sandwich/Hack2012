@@ -63,14 +63,18 @@ class Model_Text_Incoming
 	private function parseCommand()
 	{
 		$spacePosition = strpos($this->_text, ' ');
-		$command = substr($this->_text, 1, $spacePosition ? strpos($this->_text, ' ') : strlen($this->_text));
+		$command 	   = substr($this->_text, 1, $spacePosition ? strpos($this->_text, ' ') : strlen($this->_text));
+		$input		   = substr($this->_text, strlen($command));
+		
+		$command = ucfirst(strtolower(trim($command)));
+		$input   = trim($input);
 		
 		if (!empty($command) && file_exists(LSF_Application::getApplicationPath() . '/Model/Text/Command/' . $command . '.inc.php'))
 		{
 			$className = 'Model_Text_Command_' . $command;
 			$command = new $className();
 			
-			return $command->setFrom($this->_fromNumber)->run();
+			return $command->setInput($input)->setFrom($this->_fromNumber)->run();
 		}
 		
 		return false;
