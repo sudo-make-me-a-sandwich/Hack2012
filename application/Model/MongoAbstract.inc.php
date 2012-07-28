@@ -9,7 +9,8 @@
 abstract class Model_MongoAbstract
 {
 	private
-		$_mongo;
+		$_mongo,
+		$_db;
 	
 	/**
 	 * Returns a mongo DB object
@@ -21,9 +22,9 @@ abstract class Model_MongoAbstract
 		if (!$this->_mongo)
 		{
 			$this->_mongo = new Mongo();
-			$this->_mongo->selectDB(LSF_Config::get('mongo_db_name'));
+			$this->_db = $this->_mongo->selectDB(LSF_Config::get('mongo_db_name'));
 		}
 		
-		return $this->_mongo;
+		return $this->_db;
 	}
 }
