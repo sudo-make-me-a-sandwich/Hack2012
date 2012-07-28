@@ -3,54 +3,19 @@
 /**
  * Message model
  * 
- * @author sam
+ * @author sam/tom
  */
 
 class Model_Message extends Model_MongoAbstract
 {
-	private
-		$_values = array(
-			'id'		=> null,
-			'text'		=> null,
-			'from'		=> null,
-			'sessionId' => null,
-		);
-	
 	/**
-	 * Returns the message ID
+	 * Constructs a message model object
 	 * 
-	 * @return MongoID
+	 * @return void
 	 */
-	public function getId()
+	public function __construct()
 	{
-		return isset($this->_values['_id']) ? $this->_values['_id'] : null;
-	}
-		
-	/**
-	 * Load a message by ID
-	 * 
-	 * @param string $id
-	 * @return bool
-	 */
-	public function load($id)
-	{
-		$result = $this->getDb()->message->findOne(array('_id' => new MongoId($id)));
-		
-		if (!empty($result)) {
-			$this->_values = $result;
-		}
-	}
-	
-	/**
-	 * Save the message
-	 * 
-	 * @return LSF_Validation_Result
-	 */
-	public function save()
-	{
-		if ($this->getDb()->message->insert($this->_values)) {
-			return new LSF_Validation_Result();
-		}
+		parent::__construct('message');
 	}
 	
 	/**
@@ -62,7 +27,7 @@ class Model_Message extends Model_MongoAbstract
 	public function setText($text)
 	{
 		if (is_string($text)) {
-			$this->_values['text'] = $text;
+			$this->setValue('text', $text);
 		}
 	}
 	
@@ -73,6 +38,6 @@ class Model_Message extends Model_MongoAbstract
 	 */
 	public function getText()
 	{
-		return $this->_values['text'];
+		return $this->getValue('text');
 	}
 }

@@ -8,13 +8,29 @@
 
 class Model_User extends Model_MongoAbstract
 {
-	/**
-	 * Load a user by ID
-	 * 
-	 * @return bool
-	 */
-	public function load($id)
+	public function __construct()
 	{
-		return false;
+		parent::__construct('user');
+	}
+	
+	/**
+	 * Set the phone number
+	 * 
+	 * @param string $text
+	 * @return void
+	 */
+	public function setPhoneNumber($phonenumber)
+	{
+		$this->setValue('phonenumber', $phonenumber);
+	}
+	
+	/**
+	 * Returns the phone number
+	 * 
+	 * @return string
+	 */
+	public function getPhoneNumber()
+	{
+		return $this->getValue('phonenumber');
 	}
 }
