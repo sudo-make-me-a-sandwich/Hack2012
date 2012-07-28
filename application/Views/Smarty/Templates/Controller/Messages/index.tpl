@@ -1,8 +1,14 @@
 {include file="header.tpl"}
 	
 	<div class="content">
-		<h1>Welcome to LSF!</h1>
-		<p>This is your new controller</p>
+		<h1>Messages!</h1>
+		<p>Hello</p>
+		
+		{if $messageSent}
+			Your message was sent, dufus.
+		{else}
+			{$form}
+		{/if}
 	</div>
 	<!-- /content -->
 

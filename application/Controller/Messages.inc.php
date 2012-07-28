@@ -1,10 +1,10 @@
 <?php
 
 /**
+ * /txt
+ * Messages controller
  *
- *
- * @package
- * $Id$
+ * @package /txt
  */
 
 class Controller_Messages extends LSF_Controller
@@ -16,6 +16,11 @@ class Controller_Messages extends LSF_Controller
 	 */
 	protected function indexAction()
 	{
+		$form = new Form_Message();
+		$this->view->form = $form->render();
 		
+		if ($form->formSubmitted() && $form->formValidated()) {
+			$this->view->messageSent = true;
+		}
 	}
 }
