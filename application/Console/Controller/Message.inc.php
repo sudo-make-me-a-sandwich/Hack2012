@@ -24,9 +24,11 @@ class Console_Controller_Message extends LSF_Console_Controller
 	
 	protected function getAction()
 	{
-		$message = new Model_Message();
-		$message->load(LSF_Dispatch_Console::$arguments[0]);
+		$id = LSF_Dispatch_Console::$arguments[0];
 		
-		$this->response->appendLine('Message: ' . $message->getText());
+		$message = new Model_Message();
+		$message->load($id);
+		
+		$this->response->appendLine('Message (ID: ' . $id . '): ' . $message->getText());
 	}
 }

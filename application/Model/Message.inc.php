@@ -9,8 +9,8 @@
 class Model_Message extends Model_MongoAbstract
 {
 	private
-		$_id,
 		$_values = array(
+			'id'		=> null,
 			'text'		=> null,
 			'from'		=> null,
 			'sessionId' => null,
@@ -29,7 +29,11 @@ class Model_Message extends Model_MongoAbstract
 	 */
 	public function load($id)
 	{
-		$result = $this->getDb()->message->find(array('_id' => $id));
+		$result = $this->getDb()->message->findOne(array('_id' => new MongoId($id)));
+		
+		if (!empty($result)) {
+			$this->_values = $result;
+		}
 	}
 	
 	/**
@@ -57,6 +61,11 @@ class Model_Message extends Model_MongoAbstract
 		}
 	}
 	
+	/**
+	 * Returns the message text
+	 * 
+	 * @return string
+	 */
 	public function getText()
 	{
 		return $this->_values['text'];
