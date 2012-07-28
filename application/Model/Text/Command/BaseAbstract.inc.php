@@ -9,7 +9,21 @@
 abstract class Model_Text_Command_BaseAbstract
 {
 	private
-		$_fromNumber;
+		$_fromNumber,
+		$_input;
+	
+	/**
+	 * Run the command
+	 * 
+	 * @return bool
+	 */
+	public function run()
+	{
+		$outgoingText = new Model_Text_Outgoing();
+		$outgoingText->setTo($this->_fromNumber);
+		$outgoingText->setText($this->getResponse());
+		return $outgoingText->send();
+	}
 	
 	/**
 	 * Set the "from" phone number
@@ -27,16 +41,28 @@ abstract class Model_Text_Command_BaseAbstract
 	}
 	
 	/**
-	 * Run the command
+	 * Set the command input
 	 * 
-	 * @return bool
+	 * @param string $input
+	 * @return Model_Text_Command_BaseAbstract
 	 */
-	public function run()
+	public function setInput($input)
 	{
-		$outgoingText = new Model_Text_Outgoing();
-		$outgoingText->setTo($this->_fromNumber);
-		$outgoingText->setText($this->getResponse());
-		return $outgoingText->send();
+		if (is_string($input)) {
+			$this->_input = $input;
+		}
+		
+		return $this;
+	}
+	
+	/**
+	 * Returns any command input
+	 * 
+	 * @return string
+	 */
+	protected function getInput()
+	{
+		return $this->_input;
 	}
 	
 	/**

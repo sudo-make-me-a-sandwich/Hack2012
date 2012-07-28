@@ -56,6 +56,6 @@ abstract class Controller_AuthAbstract extends LSF_Controller
 	 */
 	private function authFailed()
 	{
-		//$this->redirect();
+		$this->redirect();
 	}
 }
