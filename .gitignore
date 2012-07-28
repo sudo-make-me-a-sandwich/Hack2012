@@ -1,7 +1,8 @@
 /.settings
+/.project
 /.buildpath
 /.projectlogs/access.log
 logs/error.log
-/.project
+logs/access.log
 /public/index.php
 /public/.htaccess
