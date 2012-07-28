@@ -4,3 +4,5 @@
 /.projectlogs/access.log
 logs/error.log
 logs/access.log
+/public/index.php
+/public/.htaccess

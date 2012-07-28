@@ -1,1 +1,0 @@
-../framework/index.php
