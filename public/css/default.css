@@ -69,6 +69,11 @@ input, textarea {
     cursor: text;
 }
 
+img {
+	width: 100%;
+	height: auto;
+}
+
 /* ----- Forms ----- */
 input, select, option, optgroup, textarea {
 	font: inherit;
@@ -209,6 +214,8 @@ a:hover {
 \*----------------------------------------------------------------------------------------------------------------*/
 .content {
 	max-width: 1000px;
+	min-width: 320px;
+	padding: 10px;
 	margin: 0 auto;
 	
 	position: relative;
@@ -242,16 +249,19 @@ a:hover {
 	HEADER
 \*----------------------------------------------------------------------------------------------------------------*/
 .header {
-	min-height: 100px;
+	border-top: 1px solid #fff;
+	border-bottom: 1px solid #fff;
 	
 	background: #575757 url("../images/noise.png") repeat;
 }
 
 .header .logo {
-	position: absolute;
-	top: 10px;
-	left: 0;
+	width: 157px;
+	height: 108px;
+	margin: 0 auto;
+	display: block;
 }
+
 
 
 
@@ -260,20 +270,31 @@ a:hover {
 	NAV
 \*----------------------------------------------------------------------------------------------------------------*/
 .nav {
-	float: right;
-	
 	list-style: none;
 }
 
 .nav li {
+	margin-left: 20px;
 	display: inline-block;
 }
 
 .nav a {
+	border-bottom: 0px solid #fff;
+	
 	color: #fff;
+	font-size: 1.1em;
+	line-height: 1em;
+	
+	-moz-transition: all 0.1s ease-out;
+	-webkit-transition: all 0.1s ease-out;
+	-o-transition: all 0.1s ease-out;
+	-ms-transition: all 0.1s ease-out;
+	transition: all 0.1s ease-out;
 }
 
-
+.nav a:hover {
+	border-bottom: 2px solid #fff;
+}
 
 
 
@@ -337,6 +358,15 @@ a:hover {
 	
 	.row .elevenCol {
 		width: 91.5%;
+	}
+	
+	.nav {
+		margin-top: 40px;
+		float: right;
+	}
+	
+	.nav a {
+		font-size: 1.3em;
 	}
 }
 
