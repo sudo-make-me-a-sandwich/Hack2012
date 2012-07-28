@@ -1,1 +1,13 @@
-../framework/.htaccess
+Allow from all
+DirectoryIndex index.php
+
+RewriteEngine On
+
+# Rewrite everything to index.php
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*) index.php?$1
+
+# Stop caching
+
+#Header set Cache-Control "max-age=0, private, proxy-revalidate"
