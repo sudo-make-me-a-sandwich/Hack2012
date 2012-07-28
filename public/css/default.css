@@ -123,15 +123,15 @@ hr {
 \*----------------------------------------------------------------------------------------------------------------*/
 body {   
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-	background: #1b1b1b;
-	color: #6c6c6c;
+	background: #f1f1f1;
+	color: #575757;
     
 	position: relative;
 }
 
 h1, .h1 {
     margin-bottom: 0.5em;
-	color: #01a7c7;
+	color: #3771A1;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-size: 2.5em;
 	line-height: 1.2em;
@@ -140,7 +140,7 @@ h1, .h1 {
 
 h2, .h2 {
     margin-bottom: 0.5em;
-	color: #01a7c7;
+	color: #3771A1;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-size: 1.8em;
 	line-height: 1.2em;
@@ -149,7 +149,7 @@ h2, .h2 {
 
 h3, .h3 {
     margin-bottom: 0.5em;
-	color: #01a7c7;
+	color: #3771A1;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-size: 1.6em;
 	line-height: 1.2em;
@@ -158,7 +158,7 @@ h3, .h3 {
 
 h4, .h4 {
     margin-bottom: 0.5em;
-	color: #01a7c7;
+	color: #3771A1;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-size: 1.4em;
 	line-height: 1.2em;
@@ -167,7 +167,7 @@ h4, .h4 {
 
 h5, .h5 {
     margin-bottom: 0.5em;
-	color: #01a7c7;
+	color: #3771A1;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-size: 1.2em;
 	line-height: 1em;
@@ -176,7 +176,7 @@ h5, .h5 {
 
 h6, .h6 {
     margin-bottom: 0.5em;
-	color: #01a7c7;
+	color: #3771A1;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-size: 1em;
 	line-height: 1em;
@@ -184,7 +184,7 @@ h6, .h6 {
 }
 
 a {
-	color: #01a7c7;
+	color: #3771A1;
 	text-decoration: none;
     
     -moz-transition: all 0.2s ease-out;
@@ -195,7 +195,7 @@ a {
 }
 
 a:hover {
-	color: #6FD0EA;
+	color: #41C7E0;
 }
 
 
