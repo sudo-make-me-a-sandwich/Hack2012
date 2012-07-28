@@ -27,15 +27,21 @@ class Controller_Register extends LSF_Controller
 			 * Temp code
 			 */
 			$user = new Model_User();
-			if (!$user->loadByPhonenumber($form->getElementValue('phonenumber'))) {
+			if (!$user->loadByPhonenumber($form->getElementValue('phonenumber')))
+			{
 				$user->setPhoneNumber($form->getElementValue('phonenumber'));
 				$user->setPassword($form->getElementValue('password'));
 				$user->save();
+				
+				LSF_Session::GetSession()->phonenumber = $form->getElementValue('phonenumber');
+			
+				$this->redirect('messages');
+			}
+			else {
+				$this->view->unableToRegister = true;
 			}
 			
-			LSF_Session::GetSession()->phonenumber = $form->getElementValue('phonenumber');
 			
-			$this->redirect('messages');
 		}
 	}
 }
