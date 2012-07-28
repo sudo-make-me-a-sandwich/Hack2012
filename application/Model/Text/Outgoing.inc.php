@@ -49,7 +49,9 @@ class Model_Text_Outgoing
 	public function send()
 	{
 		$clockwork = new Clockwork(LSF_Config::get('mediaburst_api_key'));
+		
 		$response = $clockwork->send(array(
+			'from'	  => LSF_Config::get('txt_from'),
 			'to'	  => $this->_to,
 			'message' => $this->_text,
 		));
