@@ -16,6 +16,7 @@ abstract class Model_Text_Command_BaseAbstract
 	public function run()
 	{
 		$outgoingText = new Model_Text_Outgoing();
+		$outgoingText->setTo('07751651394');
 		$outgoingText->setText($this->getResponse());
 		return $outgoingText->send();
 	}
