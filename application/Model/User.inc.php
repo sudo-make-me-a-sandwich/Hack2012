@@ -81,6 +81,6 @@ class Model_User extends Model_MongoAbstract
 	 */
 	public function hashPassword($password)
 	{
-		return hash('whirlpool', 'mooe23d' . $password . 'SamsAGay-123{}>£');
+		return hash('whirlpool', 'mooe23d' . $password . '67saGAFbgjkn^SD');
 	}
 }

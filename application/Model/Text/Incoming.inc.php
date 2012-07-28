@@ -9,20 +9,18 @@
 class Model_Text_Incoming
 {
 	private
-		$_fromNumber,
+		$_fromUser,
 		$_text;
 	
 	/**
-	 * Set the "from" phone number
+	 * Set the "from" user object
 	 * 
-	 * @param string $number
+	 * @param Model_User $user
 	 * @return void
 	 */
-	public function setFrom($number)
+	public function setFrom(Model_User $user)
 	{
-		if (is_numeric($number)) {
-			$this->_fromNumber = $number;
-		}
+		$this->_fromUser = $user;
 	}
 	
 	/**
@@ -74,7 +72,31 @@ class Model_Text_Incoming
 			$className = 'Model_Text_Command_' . $command;
 			$command = new $className();
 			
-			return $command->setInput($input)->setFrom($this->_fromNumber)->run();
+			return $command->setInput($input)->setFrom($this->_fromUser->getPhoneNumber())->run();
+		}
+		
+		return false;
+	}
+	
+	/**
+	 * Create a new (non-command) message
+	 * 
+	 * @return bool
+	 */
+	private function createMessage()
+	{
+		if (!$this->_fromUser->isInSession())
+		{
+			/**
+			 * Look for an existing single-user session (who's been waiting longest)
+			 * If found, add to session, send 2-way introductory messages
+			 * If not, create new session and wait.
+			 */
+			
+			
+		}
+		else {
+			// Send message to session partner
 		}
 		
 		return false;
