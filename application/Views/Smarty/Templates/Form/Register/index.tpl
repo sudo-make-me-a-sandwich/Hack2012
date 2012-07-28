@@ -1,5 +1,3 @@
-Message form
-
 <form method="post" action="">
 	<ul>
 		{include file="../elementsLoop.tpl"}
