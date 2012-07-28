@@ -1,9 +1,9 @@
-/.settings
-/.project
-/.buildpath
-/.projectlogs/access.log
+.settings
+.project
+.buildpath
+.projectlogs/access.log
 logs/error.log
 logs/access.log
-/public/index.php
-/public/.htaccess
+public/index.php
+public/.htaccess
 application/Views/Smarty/Templates_c/*.tpl.php
