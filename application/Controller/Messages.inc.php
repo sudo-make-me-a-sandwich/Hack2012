@@ -22,7 +22,7 @@ class Controller_Messages extends Controller_AuthAbstract
 		if ($form->formSubmitted() && $form->formValidated())
 		{
 			$text = new Model_Text_Incoming();
-			$text->setFrom($this->getUser()->getPhoneNumber());
+			$text->setFrom($this->getUser());
 			$text->setText($form->getElementValue('message'));
 			
 			$this->view->messageSent = $text->process();
