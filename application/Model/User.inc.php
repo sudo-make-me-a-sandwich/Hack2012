@@ -83,4 +83,27 @@ class Model_User extends Model_MongoAbstract
 	{
 		return hash('whirlpool', 'mooe23d' . $password . '67saGAFbgjkn^SD');
 	}
+	
+	/**
+	 * Returns whether or not this user is currently in a text chat session
+	 * 
+	 * @return bool
+	 */
+	public function isInSession()
+	{
+		return (bool)$this->getValue('session_id');
+	}
+	
+	/**
+	 * Returns a session object for this user
+	 * 
+	 * @return Model_Session
+	 */
+	public function getSession()
+	{
+		$session = new Model_Session();
+		$session->load($this->getSessionId());
+		
+		return $session;
+	}
 }
