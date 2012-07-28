@@ -1,12 +1,12 @@
 <?php
 
 /**
- * Message form
+ * Login form
  * 
  * @author sam
  */
 
-class Form_Message extends LSF_Form
+class Form_Login extends LSF_Form
 {
 	/**
 	 * (non-PHPdoc)

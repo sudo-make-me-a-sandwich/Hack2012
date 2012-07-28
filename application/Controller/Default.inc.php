@@ -17,7 +17,7 @@ class Controller_Default extends LSF_Controller
 	 */
 	protected function indexAction()
 	{
-		$form = new Form_Message();
+		$form = new Form_Login();
 		$this->view->form = $form->render();
 		
 		if ($form->formSubmitted() && $form->formValidated())
@@ -26,8 +26,8 @@ class Controller_Default extends LSF_Controller
 			 * Temp code
 			 */
 			$user = new Model_User();
-			if (!$user->loadByPhonenumber(LSF_Session::GetSession()->phonenumber)) {
-				$user->setPhoneNumber(LSF_Session::GetSession()->phonenumber);
+			if (!$user->loadByPhonenumber($form->getElementValue('phonenumber'))) {
+				$user->setPhoneNumber($form->getElementValue('phonenumber'));
 				$user->save();
 			}
 			
