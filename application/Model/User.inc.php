@@ -76,7 +76,8 @@ class Model_User extends Model_MongoAbstract
 		if (!$passingHash) {
 			$password = $this->hashPassword($password);
 		}
-		return $this->getPhoneNumber() && $this->getValue('password') == $password;
+		
+		return $this->getPhoneNumber() && !empty($password) && $this->getValue('password') == $password;
 	}
 	
 	/**
