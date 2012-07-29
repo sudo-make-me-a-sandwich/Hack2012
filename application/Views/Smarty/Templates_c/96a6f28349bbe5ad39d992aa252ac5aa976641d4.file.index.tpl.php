@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.8, created on 2012-07-29 11:00:32
+<?php /* Smarty version Smarty-3.1.8, created on 2012-07-29 11:13:47
          compiled from "/Users/sam/Sites/Hack2012/application/Views/Smarty/Templates/Controller/Default/index.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:7936927795013e282c4a734-05076730%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -13,7 +13,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'dea4803fcd3620f29a94917cbd8467d57a40c208' => 
     array (
       0 => '/Users/sam/Sites/Hack2012/application/Views/Smarty/Templates/layout.tpl',
-      1 => 1343530641,
+      1 => 1343556819,
       2 => 'file',
     ),
   ),
@@ -25,6 +25,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'unifunc' => 'content_5013e282ca38c6_34754761',
   'variables' => 
   array (
+    'txtNumber' => 0,
     'loggedIn' => 0,
   ),
   'has_nocache_code' => false,
@@ -51,7 +52,14 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 					<a class="logo" href="/"><img src="/images/logo.png" alt="/txt" /></a>
 				</div>
 				
-				<div class="nineCol last">
+				<div class="fourCol">
+					<div class="largeNumber">
+						<?php echo $_smarty_tpl->tpl_vars['txtNumber']->value;?>
+
+					</div>
+				</div>
+				
+				<div class="fiveCol last">
 					<ul class="nav">
 						<li><a href="/messages/">Messages</a></li>
 						<li><a href="/profile/">Profile</a></li>
@@ -113,5 +121,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 	<!-- SITE JS -->
 	<script src="/js/mediaqueries.js" type="text/javascript"></script>
 	<script src="/js/messages.js" type="text/javascript"></script>
+	<script src="/js/listCommands.js" type="text/javascript"></script>
 </body>
 </html>	<?php }} ?>

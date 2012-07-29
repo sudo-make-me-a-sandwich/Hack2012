@@ -20,7 +20,7 @@ class Model_Session_List extends Model_MongoAbstract
 	 */
 	public function findAvailableSession()
 	{
-		$result = $this->getDb()->sessions->find(array('users_count' => 1))->sort(array('updated_timestamp' => -1));
+		$result = $this->getDb()->sessions->find(array('users_count' => 1))->sort(array('updated_timestamp'));
 		
 		foreach ($result as $id => $doc)
 		{
