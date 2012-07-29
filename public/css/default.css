@@ -469,6 +469,13 @@ button:hover {
 	margin-bottom: 10px;
 }
 
+.command {
+	padding: 10px;
+	margin-bottom: 20px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+}
+
 .sendMessgeForm {
 	text-align: center;
 }
