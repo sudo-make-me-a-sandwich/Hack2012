@@ -143,4 +143,23 @@ class Model_User extends Model_MongoAbstract
 		
 		return $session;
 	}
+	
+	/**
+	 * Get a user for a given phone number
+	 * Will create the user if doesn't exist
+	 * 
+	 * @return Model_User
+	 */
+	public static function Get($phoneNumber)
+	{
+		$object = new Model_User();
+		
+		if (!$object->loadByPhonenumber($phonenumber))
+		{
+			$object->setPhoneNumber($phonenumber);
+			$object->save();
+		}
+		
+		return $object;
+	}
 }

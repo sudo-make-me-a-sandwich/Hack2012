@@ -27,7 +27,7 @@ class Controller_Default extends LSF_Controller
 			 */
 			$user = new Model_User();
 			if (!$user->loadByPhonenumber($form->getElementValue('phonenumber'))) {
-				$this->redirect('register', false, false, '?phonenumber=' . $form->getElementValue('phonenumber'));
+				$this->redirect('register', null, null, '?phonenumber=' . $form->getElementValue('phonenumber'));
 			}
 			else
 			{
@@ -41,8 +41,6 @@ class Controller_Default extends LSF_Controller
 					$this->view->invalidLogin = true;
 				}
 			}
-			
-			
 		}
 	}
 }
