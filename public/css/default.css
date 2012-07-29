@@ -473,10 +473,6 @@ button:hover {
 	text-align: center;
 }
 
-.sendMessgeForm label {
-	display: none;
-}
-
 .sendMessgeForm input {
 	width: 100%;
 	margin-bottom: 5px;
@@ -563,14 +559,6 @@ button:hover {
 /*----------------------------------------------------------------------------------------------------------------*\
 	MEDIA QUERIES
 \*----------------------------------------------------------------------------------------------------------------*/
-/* 320px */
-@media all and (min-width: 0px) {
-}
-
-/* 480px */
-@media all and (min-width: 480px) {
-}
-
 /* 600px */
 @media all and (min-width: 600px) {
     .oneCol, .twoCol, .threeCol, .fourCol, .fiveCol, .sixCol, .sevenCol, .eightCol, .nineCol, .tenCol, .elevenCol {
@@ -645,12 +633,4 @@ button:hover {
 		display: block;
 		float: left;
 	}
-}
-
-/* 768px */
-@media all and (min-width: 768px) {
-}
-
-/* 900px */
-@media all and (min-width: 900px) { 
 }
