@@ -4,21 +4,24 @@
 	<div class="row">
 		<div class="content">
 			<div class="twelveCol">
-				<div class="currentMessage">
-				</div>
-				
-				<ul>
-					{foreach $currentSession as $message}
-						<li class="{$message.sentBy}">{$message.sentBy} ({$message.timestamp|date_format}): {$message.text}</li>
-					{/foreach}
-				</ul>
-				
-				<div class="sendMessgeForm">
-					{if $messageSent}
-						Your message was sent, dufus.
-					{else}
-						{$form}
-					{/if}
+				<div class="currentMessages">
+					<h2>Current chat session:</h2>
+					
+					<div class="messageGroup">
+		                <ul>
+							{foreach $currentSession as $message}
+								<li class="{$message.sentBy}">{$message.sentBy} ({$message.timestamp|date_format}): {$message.text}</li>
+							{/foreach}
+						</ul>
+						
+						<div class="sendMessgeForm">
+							{if $messageSent}
+								Your message was sent, dufus.
+							{else}
+								{$form}
+							{/if}
+						</div>
+		            </div>
 				</div>
 				
 				<div class="messageHistory">

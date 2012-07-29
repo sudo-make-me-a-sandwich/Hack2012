@@ -86,7 +86,7 @@ class Model_Text_Incoming
 	private function createMessage()
 	{
 		if (!$this->_fromUser->isInSession()) {
-			$session = $this->_fromUser->findPartner();
+			$session = $this->_fromUser->findSession();
 		}
 		else {
 			$session = $this->_fromUser->getSession();

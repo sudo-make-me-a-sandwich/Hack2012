@@ -148,7 +148,7 @@ class Model_User extends Model_MongoAbstract
 	 * 
 	 * @return Model_Session
 	 */
-	public function findPartner()
+	public function findSession()
 	{
 		$sessionList = new Model_Session_List();
 		
