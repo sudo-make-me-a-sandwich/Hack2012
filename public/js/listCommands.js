@@ -14,10 +14,8 @@ var ListCommands = Class.create ({
 	},
 	
 	addControls: function()
-	{			
-		this.container.observe('keyUp', function(event) {
-			alert(this.container.readAttribute('value'));
-		});
+	{	
+		new Form.Element.Observer(this.container, 1, this.formUpdated);
 	},
     
     start: function()
@@ -27,7 +25,7 @@ var ListCommands = Class.create ({
 	
 	formUpdated: function()
 	{
-		this.container.getValue().startsWith('/');
+		alert("test");
 	},
     
     commandClicked: function(event)

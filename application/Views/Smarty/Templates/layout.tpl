@@ -46,6 +46,5 @@
 	<!-- SITE JS -->
 	<script src="/js/mediaqueries.js" type="text/javascript"></script>
 	<script src="/js/messages.js" type="text/javascript"></script>
-	<script src="/js/listCommands.js" type="text/javascript"></script>
 </body>
 </html>	
