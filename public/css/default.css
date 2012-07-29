@@ -495,6 +495,11 @@ button:hover {
 	overflow: hidden;
 }
 
+.date {
+	font-size: 0.8em;
+	font-style: italic;
+}
+
 .titleBar {
 	padding: 5px 10px;
 	

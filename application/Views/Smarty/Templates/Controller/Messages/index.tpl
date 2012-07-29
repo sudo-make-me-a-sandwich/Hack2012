@@ -10,7 +10,7 @@
 					<div class="messageGroup">
 		                <ul>
 							{foreach $currentSession as $message}
-								<li class="{$message.sentBy}">{$message.sentBy} ({$message.timestamp|date_format}): {$message.text}</li>
+								<li class="{$message.sentBy}">{$message.sentBy} <span class="date">({$message.timestamp|date_format:"%d %B %Y at %H:%M"})</span>: {$message.text}</li>
 							{/foreach}
 						</ul>
 						
@@ -34,7 +34,7 @@
 				                
 				                <ul>
 									{foreach $messages as $message}
-										<li class="{$message.sentBy}">{$message.sentBy} ({$message.timestamp|date_format}): {$message.text}</li>
+										<li class="{$message.sentBy}">{$message.sentBy} <span class="date">({$message.timestamp|date_format:"%d %B %Y at %H:%M"})</span>: {$message.text}</li>
 									{/foreach}
 								</ul>
 				            </div>
