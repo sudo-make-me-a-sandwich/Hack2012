@@ -18,7 +18,11 @@ class Controller_Register extends LSF_Controller
 	protected function indexAction()
 	{
 		$form = new Form_Register();
-		$form->setElementValue('phonenumber', $this->getRequest()->getGetVar('phonenumber'));
+			
+		if ($this->getRequest()->getGetVar('phonenumber')) {
+			$form->setElementValue('phonenumber', $this->getRequest()->getGetVar('phonenumber'));
+		}
+		
 		$this->view->form = $form->render();
 		
 		if ($form->formSubmitted() && $form->formValidated())
