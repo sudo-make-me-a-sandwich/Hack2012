@@ -9,6 +9,8 @@
 	<!-- CSS -->
 	<link href="/css/default.css" rel="stylesheet" type="text/css" title="Default Theme" media="screen" />
 	
+	<!-- JS Libs -->
+	<script src="/js/libs/procculous.js" type="text/javascript"></script>
 </head>
 <body>
 	<div class="pageContainer">
@@ -37,5 +39,6 @@
 	
 	<!-- SITE JS -->
 	<script src="/js/mediaqueries.js" type="text/javascript"></script>
+	<script src="/js/messages.js" type="text/javascript"></script>
 </body>
 </html>	

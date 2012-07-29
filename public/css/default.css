@@ -454,7 +454,68 @@ button:hover {
 /*----------------------------------------------------------------------------------------------------------------*\
 	MESSAGES
 \*----------------------------------------------------------------------------------------------------------------*/
+.messages {
+    position: relative;
+}
 
+.messages .messageGroup {
+	margin-bottom: 20px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	
+	overflow: hidden;
+}
+
+.messages .titleBar {
+	padding: 5px 10px;
+	
+    -webkit-transition: all 0.2s ease-in;  
+    -moz-transition: all 0.2s ease-in;  
+    -o-transition: all 0.2s ease-in;  
+    transition: all 0.2s ease-in; 
+    
+    cursor: pointer;
+}
+
+.messages .titleBar h5 {
+	-webkit-transition: all 0.2s ease-in;  
+    -moz-transition: all 0.2s ease-in;  
+    -o-transition: all 0.2s ease-in;  
+    transition: all 0.2s ease-in;
+}
+
+.messages .titleBar .icon {
+	font-size: 1.3em;
+	
+	-webkit-transition: all 0.2s ease-in;  
+    -moz-transition: all 0.2s ease-in;  
+    -o-transition: all 0.2s ease-in;  
+    transition: all 0.2s ease-in; 
+    
+	position: absolute;
+	top: 1px;
+	right: 20px;
+}
+
+.messages ul {
+    list-style: none;
+}
+
+.messages li {
+	padding: 0px 10px;
+}
+
+.messages .titleBar:hover, 
+.messages .open .titleBar,
+.messages .open .titleBar h5 {
+	color: #fff;
+	
+    background: #3771A1;
+}
+
+.messages .titleBar:hover h5 {
+	color: #fff;
+}
 
 
 
