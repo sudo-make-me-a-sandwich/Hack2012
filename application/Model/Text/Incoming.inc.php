@@ -83,15 +83,9 @@ class Model_Text_Incoming
 	 */
 	private function createMessage()
 	{
-		if (!$this->_fromUser->isInSession()) {
-			$session = $this->_fromUser->findSession();
-		}
-		else {
-			$session = $this->_fromUser->getSession();
-		}
-		
-		if (!$session->isLonely())
+		if ($this->_fromUser->isInSession())
 		{
+			$session = $this->_fromUser->getSession();
 			$users = new Model_User_List();
 			
 			foreach ($users->findUsersActiveInSession($session->getId()) as $recipient)
@@ -110,15 +104,10 @@ class Model_Text_Incoming
 					$message->save();
 				}
 			}
-		}
-		else
-		{
-			$text = new Model_Text_Outgoing();
-			$text->setTo($this->_fromUser->getPhoneNumber());
-			$text->setText('Finding you someone to talk to...');
-			$text->send();
+			
+			return true;
 		}
 		
-		return true;
+		return false;
 	}
 }
