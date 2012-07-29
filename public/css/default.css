@@ -191,7 +191,7 @@ h6, .h6 {
 }
 
 p {
-	margin-bottom: 0.5em;
+	margin-bottom: 15px;
 }
 
 a {
@@ -207,6 +207,12 @@ a {
 
 a:hover {
 	color: #5193C9;
+}
+
+ul.padding {
+	margin: 0px;
+	margin-left: 15px;
+	margin-bottom: 15px;
 }
 
 
@@ -467,10 +473,6 @@ button:hover {
 	text-align: center;
 }
 
-.sendMessgeForm label {
-	display: none;
-}
-
 .sendMessgeForm input {
 	width: 100%;
 	margin-bottom: 5px;
@@ -557,14 +559,6 @@ button:hover {
 /*----------------------------------------------------------------------------------------------------------------*\
 	MEDIA QUERIES
 \*----------------------------------------------------------------------------------------------------------------*/
-/* 320px */
-@media all and (min-width: 0px) {
-}
-
-/* 480px */
-@media all and (min-width: 480px) {
-}
-
 /* 600px */
 @media all and (min-width: 600px) {
     .oneCol, .twoCol, .threeCol, .fourCol, .fiveCol, .sixCol, .sevenCol, .eightCol, .nineCol, .tenCol, .elevenCol {
@@ -639,12 +633,4 @@ button:hover {
 		display: block;
 		float: left;
 	}
-}
-
-/* 768px */
-@media all and (min-width: 768px) {
-}
-
-/* 900px */
-@media all and (min-width: 900px) { 
 }
