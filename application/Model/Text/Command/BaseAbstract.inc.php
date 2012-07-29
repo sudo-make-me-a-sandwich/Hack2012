@@ -17,12 +17,14 @@ abstract class Model_Text_Command_BaseAbstract
 	 * 
 	 * @return bool
 	 */
-	public function run()
+	public function run(Model_IOutgoing $handler=null)
 	{
-		$outgoingText = new Model_Text_Outgoing();
-		$outgoingText->setTo($this->_fromUser->getPhoneNumber());
-		$outgoingText->setText($this->getResponse());
-		return $outgoingText->send();
+		if (!isset($handler)) {
+			$handler = new Model_Text_Outgoing();
+		}
+		$handler->setTo($this->_fromUser->getPhoneNumber());
+		$handler->setText($this->getResponse());
+		return $handler->send();
 	}
 	
 	/**

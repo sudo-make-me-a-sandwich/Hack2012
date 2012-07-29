@@ -9,7 +9,7 @@ require_once LSF_Application::getApplicationPath() . '/../externals/clockwork-ph
  * @author sam
  */
 
-class Model_Text_Outgoing
+class Model_Text_Outgoing implements Model_IOutgoing
 {
 	private
 		$_to,

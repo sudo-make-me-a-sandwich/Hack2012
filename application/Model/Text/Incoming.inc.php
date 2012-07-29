@@ -41,10 +41,10 @@ class Model_Text_Incoming
 	 * 
 	 * @return bool
 	 */
-	public function process()
+	public function process(Model_IOutgoing $handler=null)
 	{
 		if (substr($this->_text, 0, 1) == '/') {
-			return $this->parseCommand();
+			return $this->parseCommand($handler);
 		}
 		else {
 			return $this->createMessage();
@@ -56,7 +56,7 @@ class Model_Text_Incoming
 	 * 
 	 * @return bool
 	 */
-	private function parseCommand()
+	private function parseCommand(Model_IOutgoing $handler=null)
 	{
 		$spacePosition = strpos($this->_text, ' ');
 		$command 	   = substr($this->_text, 1, $spacePosition ? strpos($this->_text, ' ') : strlen($this->_text));
@@ -69,8 +69,9 @@ class Model_Text_Incoming
 		{
 			$className = 'Model_Text_Command_' . $command;
 			$command = new $className();
+			$command->setInput($input)->setFromUser($this->_fromUser);
 			
-			return $command->setInput($input)->setFromUser($this->_fromUser)->run();
+			return $command->run($handler);
 		}
 		
 		return false;

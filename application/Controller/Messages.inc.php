@@ -25,7 +25,10 @@ class Controller_Messages extends Controller_AuthAbstract
 			$text->setFrom($this->getUser());
 			$text->setText($form->getElementValue('message'));
 			
-			$this->view->messageSent = $text->process();
+			$handler = new Model_Web_Outgoing();
+			$this->view->messageSent = $text->process($handler);
+			
+			$this->view->response = $handler->getText();
 		}
 		
 		$this->addMessageHistoryToView();

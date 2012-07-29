@@ -12,10 +12,10 @@ class Model_Text_Command_Bored extends Model_Text_Command_BaseAbstract
 	 * (non-PHPdoc)
 	 * @see application/Model/Text/Command/Model_Text_Command_BaseAbstract::run()
 	 */
-	public function run()
+	public function run(Model_IOutgoing $handler=null)
 	{
 		$this->getUser()->clearSession();
-		return parent::run();
+		return parent::run($handler);
 	}
 	
 	/**

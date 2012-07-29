@@ -6,7 +6,7 @@
 			<div class="twelveCol">
 				<div class="currentMessages">
 					<h2>Current chat session:</h2>
-					
+					<h1>{$response}</h1>
 					<div class="messageGroup">
 		                <ul>
 							{foreach $currentSession as $message}
