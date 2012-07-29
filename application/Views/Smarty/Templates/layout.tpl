@@ -20,7 +20,13 @@
 					<a class="logo" href="/"><img src="/images/logo.png" alt="/txt" /></a>
 				</div>
 				
-				<div class="nineCol last">
+				<div class="fourCol">
+					<div class="largeNumber">
+						{$txtNumber}
+					</div>
+				</div>
+				
+				<div class="fiveCol last">
 					<ul class="nav">
 						<li><a href="/messages/">Messages</a></li>
 						<li><a href="/profile/">Profile</a></li>
@@ -40,5 +46,6 @@
 	<!-- SITE JS -->
 	<script src="/js/mediaqueries.js" type="text/javascript"></script>
 	<script src="/js/messages.js" type="text/javascript"></script>
+	<script src="/js/listCommands.js" type="text/javascript"></script>
 </body>
 </html>	

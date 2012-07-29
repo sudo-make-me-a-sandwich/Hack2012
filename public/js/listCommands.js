@@ -15,12 +15,19 @@ var ListCommands = Class.create ({
 	
 	addControls: function()
 	{			
-		
+		this.container.observe('keyUp', function(event) {
+			alert(this.container.readAttribute('value'));
+		});
 	},
     
     start: function()
 	{	
 		
+	},
+	
+	formUpdated: function()
+	{
+		this.container.getValue().startsWith('/');
 	},
     
     commandClicked: function(event)
@@ -32,7 +39,7 @@ var ListCommands = Class.create ({
 
 document.observe('dom:loaded', function()
 {	
-    $('messageInput') {
+    if ($('messageInput')) {
         new ListCommands($('messageInput'));
-    });
+    }
 });

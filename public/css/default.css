@@ -344,6 +344,14 @@ button:hover {
 	display: block;
 }
 
+.header .largeNumber {
+	margin-bottom: 10px;
+	
+	color: #fff;
+	font-size: 2em;
+	line-height: 1em;
+	text-align: center;
+}
 
 
 
@@ -637,6 +645,10 @@ button:hover {
 	
 	.header .logo {
 		width: 157px;
+	}
+	
+	.header .largeNumber {
+		padding-top: 35px;
 	}
 	
 	.sendMessgeForm button {
