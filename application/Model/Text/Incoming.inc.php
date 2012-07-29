@@ -115,6 +115,13 @@ class Model_Text_Incoming
 			
 			return true;
 		}
+		else
+		{
+			$text = new Model_Text_Outgoing();
+			$text->setTo($this->_fromUser->getPhoneNumber());
+			$text->setText('Finding you someone to talk to...');
+			$text->send();
+		}
 		
 		return false;
 	}
