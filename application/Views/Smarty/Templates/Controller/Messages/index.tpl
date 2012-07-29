@@ -15,8 +15,15 @@
 				<h2>Message history:</h2>
 				
 				<ul>
-					{foreach $messages as $message}
-						<li>{$message.sentBy}: {$message.text}</li>
+					{foreach $sessions as $sessionId => $messages}
+						<li>
+							{$sessionId}
+							<ul>
+								{foreach $messages as $message}
+									<li>{$message.sentBy}: {$message.text}</li>
+								{/foreach}
+							</ul>
+						</li>
 					{/foreach}
 				</ul>
 			</div>
