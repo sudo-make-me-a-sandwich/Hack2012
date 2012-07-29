@@ -517,6 +517,12 @@ button:hover {
 	padding: 0px 10px;
 }
 
+.messages li.you {
+	background: #E3F2FF;
+	
+	color: #3771A1;
+}
+
 .messages .titleBar:hover, 
 .messages .open .titleBar,
 .messages .open .titleBar h5 {
