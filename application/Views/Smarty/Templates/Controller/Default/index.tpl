@@ -24,7 +24,9 @@
 			</div>
 			
 			<div class="fiveCol last">
-				<div class="loginForm">
+				<div class="form">
+					<img src="/images/bg-login.png" alt="" />
+					
 					{if $invalidLogin}
 						<div class="loginFail">
 							<p>Login failed, wrong phone number/password</p>

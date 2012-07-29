@@ -9,7 +9,9 @@
 			</div>
 			
 			<div class="fiveCol last">
-				<div class="loginForm">
+				<div class="form">
+					<img src="/images/bg-register.png" alt="" />
+					
 					{if $unableToRegister}
 						<h3>Already registered?</h3>
 						<p>It seems you have already registered</p>

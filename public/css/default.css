@@ -227,6 +227,7 @@ input {
 	width: 300px;
 	padding: 5px;
 	margin-bottom: 15px;
+	border-radius: 5px;
 	
 	line-height: 1em;
 }
@@ -376,30 +377,48 @@ button:hover {
 
 
 /*----------------------------------------------------------------------------------------------------------------*\
-	HOME
+	FORMS
 \*----------------------------------------------------------------------------------------------------------------*/
-.banner {
-	border: 1px solid #575757;
-}
-
-.loginForm {
+.form {
+	padding-top: 18%;
+	
 	text-align: center;
+	
+	position: relative;
 }
 
-.loginForm label {
+.form img {
+	position: absolute;
+	
+	top: 0;
+	left: 0;
+}
+
+.form label {
 	padding-left: 5%;
 	
 	text-align: left;
 }
 
-.loginForm input {
+.form input {
 	width: 90%;
 }
 
-.loginForm .loginFail {
+.form .loginFail {
 	margin-bottom: 15px;
 	
 	color: red;
+}
+
+
+
+
+
+/*----------------------------------------------------------------------------------------------------------------*\
+	HOME
+\*----------------------------------------------------------------------------------------------------------------*/
+.banner {
+	border: 1px solid #575757;
 }
 
 
