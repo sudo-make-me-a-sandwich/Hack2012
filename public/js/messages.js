@@ -45,6 +45,9 @@ var Messages = Class.create ({
 				style: 'height: 31px;',
                 duration: 0.5
         	});
+           	
+           	//change icon
+           	event.element().up('.messageGroup').down(".icon").innerHTML = "+";
     	}
     	else
     	{
@@ -58,6 +61,9 @@ var Messages = Class.create ({
             
             //add class open
             event.element().up('.messageGroup').addClassName('open');
+            
+          //change icon
+           	event.element().up('.messageGroup').down(".icon").innerHTML = "-";
     	}
 	}
 });
