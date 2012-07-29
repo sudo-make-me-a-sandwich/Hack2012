@@ -392,16 +392,31 @@ button:hover {
 	
 	top: 0;
 	left: 0;
+	
+	z-index: 1;
 }
 
 .form label {
 	padding-left: 5%;
 	
 	text-align: left;
+	
+	z-index: 2;
 }
 
 .form input {
 	width: 90%;
+	
+	position: relative;
+	
+	z-index: 2;
+}
+
+.form button,
+.form a {
+	position: relative;
+	
+	z-index: 2;
 }
 
 .form .loginFail {
