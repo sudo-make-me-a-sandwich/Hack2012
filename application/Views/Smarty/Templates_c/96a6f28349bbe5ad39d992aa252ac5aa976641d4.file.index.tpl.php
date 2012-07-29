@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.8, created on 2012-07-29 03:24:20
+<?php /* Smarty version Smarty-3.1.8, created on 2012-07-29 09:05:52
          compiled from "/Users/sam/Sites/Hack2012/application/Views/Smarty/Templates/Controller/Default/index.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:7936927795013e282c4a734-05076730%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,13 +7,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '96a6f28349bbe5ad39d992aa252ac5aa976641d4' => 
     array (
       0 => '/Users/sam/Sites/Hack2012/application/Views/Smarty/Templates/Controller/Default/index.tpl',
-      1 => 1343528432,
+      1 => 1343548838,
       2 => 'file',
     ),
     'dea4803fcd3620f29a94917cbd8467d57a40c208' => 
     array (
       0 => '/Users/sam/Sites/Hack2012/application/Views/Smarty/Templates/layout.tpl',
-      1 => 1343522117,
+      1 => 1343530641,
       2 => 'file',
     ),
   ),
@@ -40,6 +40,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 	<!-- CSS -->
 	<link href="/css/default.css" rel="stylesheet" type="text/css" title="Default Theme" media="screen" />
 	
+	<!-- JS Libs -->
+	<script src="/js/libs/procculous.js" type="text/javascript"></script>
 </head>
 <body>
 	<div class="pageContainer">
@@ -72,15 +74,18 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 	<div class="row">
 		<div class="content">
 			<div class="sevenCol">
+				<h3>WTF?</h3>
+				<p>/txt is a way to talk to a random person.</p>
+				
 				<h3>How?</h3>
-				<p>Text join to xxxxx xxx xxx</p>
-				<p>You will the be put in contact with someone.</p>
+				<p>Text /join to <?php echo $_smarty_tpl->tpl_vars['txtNumber']->value;?>
+</p>
 				
 				<h3>Who?</h3>
 				<p>Well it could be anyone, that's the fun.</p>
 				
 				<h3>Bored?</h3>
-				<p>Don't like the person your talking to? Just text /bored and you will get someone new.</p>
+				<p>Don't like the person your talking to? <br />Just text /bored and you will get someone new.</p>
 			</div>
 			
 			<div class="fiveCol last">
@@ -107,5 +112,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 	
 	<!-- SITE JS -->
 	<script src="/js/mediaqueries.js" type="text/javascript"></script>
+	<script src="/js/messages.js" type="text/javascript"></script>
 </body>
 </html>	<?php }} ?>
