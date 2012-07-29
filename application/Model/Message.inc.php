@@ -19,6 +19,29 @@ class Model_Message extends Model_MongoAbstract
 	}
 	
 	/**
+	 * Set the from number
+	 * 
+	 * @param string $fromNumber
+	 * @return void
+	 */
+	public function setFrom($fromNumber)
+	{
+		if (is_numeric($fromNumber)) {
+			$this->setValue('from', $fromNumber);
+		}
+	}
+	
+	/**
+	 * Returns the from number
+	 * 
+	 * @return string
+	 */
+	public function getFrom()
+	{
+		return $this->getValue('from');
+	}
+	
+	/**
 	 * Set the message text
 	 * 
 	 * @param string $text

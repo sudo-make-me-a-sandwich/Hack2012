@@ -65,6 +65,16 @@ class Model_User extends Model_MongoAbstract
 	}
 	
 	/**
+	 * Returns the user's password hash
+	 * 
+	 * @return string
+	 */
+	public function getPassword()
+	{
+		return $this->getValue('password');
+	}
+	
+	/**
 	 * Check the users credentials
 	 * 
 	 * @param string $password
@@ -120,6 +130,17 @@ class Model_User extends Model_MongoAbstract
 		$session = new Model_Session();
 		$session->load($this->getSessionId());
 		return $session;
+	}
+	
+	/**
+	 * Clear the current session
+	 * 
+	 * @return void
+	 */
+	public function clearSession()
+	{
+		$this->setValue('session_id', null);
+		$this->save();
 	}
 	
 	/**

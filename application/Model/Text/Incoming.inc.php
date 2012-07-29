@@ -72,7 +72,7 @@ class Model_Text_Incoming
 			$className = 'Model_Text_Command_' . $command;
 			$command = new $className();
 			
-			return $command->setInput($input)->setFrom($this->_fromUser->getPhoneNumber())->run();
+			return $command->setInput($input)->setFromUser($this->_fromUser)->run();
 		}
 		
 		return false;
@@ -106,6 +106,7 @@ class Model_Text_Incoming
 					$text->send();
 					
 					$message = new Model_Message();
+					$message->setFrom($this->_fromUser->getPhoneNumber());
 					$message->setText($this->_text);
 					$message->setSessionId($session->getId());
 					$message->save();
