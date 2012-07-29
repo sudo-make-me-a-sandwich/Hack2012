@@ -22,6 +22,10 @@ class Controller_Incoming extends LSF_Controller
 		$from = $this->getRequest()->getGetVar('from');
 		$text = $this->getRequest()->getGetVar('content');
 		
+		if (substr($from, 0, 2) == 44) {
+			$from = '0' . substr($from, 2);
+		}
+		
 		if (!empty($from) && !empty($text))
 		{
 			$incoming = new Model_Text_Incoming();
