@@ -64,6 +64,7 @@ class Controller_Messages extends Controller_AuthAbstract
 			}
 		}
 		
+		$this->view->currentSession = $currentSession;
 		$this->view->sessions = $sessionsArray;
 	}
 }
