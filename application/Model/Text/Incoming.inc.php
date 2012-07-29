@@ -94,7 +94,9 @@ class Model_Text_Incoming
 		
 		if (!$session->isLonely())
 		{
-			foreach ($session->getUsers() as $recipient)
+			$users = new Model_User_List();
+			
+			foreach ($users->findUsersActiveInSession($session->getId()) as $recipient)
 			{
 				if ($recipient->getId() != $this->_fromUser->getId())
 				{

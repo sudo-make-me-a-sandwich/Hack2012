@@ -47,7 +47,8 @@ class Model_Session extends Model_MongoAbstract
 	 */
 	public function isLonely()
 	{
-		return count($this->getValue('users')) === 1;
+		$users = new Model_User_List();
+		return count($users->findUsersActiveInSession($this->getId())) === 1;
 	}
 	
 	/**
