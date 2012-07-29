@@ -15,7 +15,7 @@ class Model_Text_Command_Chat extends Model_Text_Command_BaseAbstract
 	 * (non-PHPdoc)
 	 * @see application/Model/Text/Command/Model_Text_Command_BaseAbstract::run()
 	 */
-	public function run()
+	public function run(Model_IOutgoing $handler=null)
 	{
 		if (!$this->getUser()->isInSession())
 		{
@@ -28,18 +28,18 @@ class Model_Text_Command_Chat extends Model_Text_Command_BaseAbstract
 				
 				foreach ($sessionUsers as $recipient)
 				{
-					if ($recipient->getId() != $this->getUser()->getId()) {
+					if ($recipient->getId() != $this->getUser()->getId())
+					{
 						$messageText = "An awesome new person has joined your chat session. You can now reply to this message to say hello.";
-					}
-					else {
-						$messageText = "You've been paired with someone. Hang tight, you should receive a message from them soon.";
-					}
 					
-					$text = new Model_Text_Outgoing();
-					$text->setTo($recipient->getPhoneNumber());
-					$text->setText($messageText);
-					$text->send();
+						$text = new Model_Text_Outgoing();
+						$text->setTo($recipient->getPhoneNumber());
+						$text->setText($messageText);
+						$text->send();
+					}
 				}
+				
+				$this->_response = "You've been paired with someone. Hang tight, you should receive a message from them soon.";
 			}
 			else {
 				$this->_response = "You've now entered a chat session, waiting for a partner.";
@@ -49,7 +49,7 @@ class Model_Text_Command_Chat extends Model_Text_Command_BaseAbstract
 			$this->_response = 'You are already in a chat session. Reply /bored if you want to leave it.';
 		}
 		
-		return parent::run();
+		return parent::run($handler);
 	}
 	
 	/**
