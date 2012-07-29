@@ -454,16 +454,31 @@ button:hover {
 /*----------------------------------------------------------------------------------------------------------------*\
 	MESSAGES
 \*----------------------------------------------------------------------------------------------------------------*/
+.messageHistory h2,
+.currentMessages h2  {
+	margin-bottom: 10px;
+}
+
+.currentMessages ul  {
+	margin-bottom: 10px;
+}
+
 .sendMessgeForm {
-	margin-bottom: 20px;
+	text-align: center;
 }
 
 .sendMessgeForm label {
 	display: none;
 }
 
-.messageHistory h2 {
-	margin-bottom: 10px;
+.sendMessgeForm input {
+	width: 100%;
+	margin-bottom: 5px;
+}
+
+.sendMessgeForm button {
+	width: 95%;
+	margin: 0;
 }
 
 .messages {
@@ -471,6 +486,7 @@ button:hover {
 }
 
 .messageGroup {
+	padding: 5px;
 	margin-bottom: 20px;
 	border: 1px solid #ccc;
 	border-radius: 5px;
@@ -612,6 +628,17 @@ button:hover {
 	
 	.header .logo {
 		width: 157px;
+	}
+	
+	.sendMessgeForm button {
+		width: 28%;
+		float: left;
+	}
+	
+	.sendMessgeForm ul {
+		width: 70%;
+		display: block;
+		float: left;
 	}
 }
 
