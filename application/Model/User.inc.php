@@ -169,9 +169,10 @@ class Model_User extends Model_MongoAbstract
 	 * Get a user for a given phone number
 	 * Will create the user if doesn't exist
 	 * 
+	 * @param string $phonenumber
 	 * @return Model_User
 	 */
-	public static function Get($phoneNumber)
+	public static function Get($phonenumber)
 	{
 		$object = new Model_User();
 		

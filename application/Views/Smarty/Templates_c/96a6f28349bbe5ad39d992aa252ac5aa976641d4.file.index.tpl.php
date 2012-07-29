@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.8, created on 2012-07-29 01:35:31
+<?php /* Smarty version Smarty-3.1.8, created on 2012-07-29 03:24:20
          compiled from "/Users/sam/Sites/Hack2012/application/Views/Smarty/Templates/Controller/Default/index.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:7936927795013e282c4a734-05076730%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '96a6f28349bbe5ad39d992aa252ac5aa976641d4' => 
     array (
       0 => '/Users/sam/Sites/Hack2012/application/Views/Smarty/Templates/Controller/Default/index.tpl',
-      1 => 1343520235,
+      1 => 1343528432,
       2 => 'file',
     ),
     'dea4803fcd3620f29a94917cbd8467d57a40c208' => 
@@ -84,7 +84,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 			</div>
 			
 			<div class="fiveCol last">
-				<div class="loginForm">
+				<div class="form">
+					<img src="/images/bg-login.png" alt="" />
+					
 					<?php if ($_smarty_tpl->tpl_vars['invalidLogin']->value){?>
 						<div class="loginFail">
 							<p>Login failed, wrong phone number/password</p>
