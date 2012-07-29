@@ -3,6 +3,14 @@
 {block "content"}
 	<div class="row">
 		<div class="content">
+			<div class="twelveCol">
+				<img class="banner" src="/images/banner2.jpg" alt="Register for /txt" />
+			</div>
+		</div>
+	</div>
+	
+	<div class="row">
+		<div class="content">
 			<div class="sevenCol">
 				<h3>Register</h3>
 				<p>Jut fill in the form and you will be good to go.</p>
