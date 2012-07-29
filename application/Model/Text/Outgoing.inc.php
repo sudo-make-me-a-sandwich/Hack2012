@@ -48,7 +48,7 @@ class Model_Text_Outgoing
 	 */
 	public function send()
 	{
-		if (!LSF_Config::get('log_outbound_messages'))
+		if (LSF_Config::get('log_outbound_messages'))
 		{
 			$logger = new LSF_Utils_File_Log_Writer('/tmp/txts.log');
 			$logger->info('Sending message to: [' . $this->_to . '] ' . $this->_text);
