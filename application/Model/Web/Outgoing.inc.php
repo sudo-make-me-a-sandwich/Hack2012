@@ -24,7 +24,7 @@ class Model_Web_Outgoing implements Model_IOutgoing
 			$this->_to = $number;
 		}
 	}
-		
+	
 	/**
 	 * Set the incoming message text
 	 * 
