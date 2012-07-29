@@ -6,7 +6,7 @@
  * @package
  */
 
-abstract class Controller_AuthAbstract extends LSF_Controller
+abstract class Controller_AuthAbstract extends Controller_BaseAbstract
 {
 	private
 		$_user;

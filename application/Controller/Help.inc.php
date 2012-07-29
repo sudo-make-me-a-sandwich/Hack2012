@@ -7,7 +7,7 @@
  * $Id$
  */
 
-class Controller_Help extends LSF_Controller
+class Controller_Help extends Controller_BaseAbstract
 {
 	/**
 	 * Default index action
