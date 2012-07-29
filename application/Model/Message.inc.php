@@ -19,6 +19,16 @@ class Model_Message extends Model_MongoAbstract
 	}
 	
 	/**
+	 * (non-PHPdoc)
+	 * @see application/Model/Model_MongoAbstract::save()
+	 */
+	public function save()
+	{
+		$this->setValue('timestamp', time());
+		return parent::save();
+	}
+	
+	/**
 	 * Set the from number
 	 * 
 	 * @param string $fromNumber
@@ -62,6 +72,16 @@ class Model_Message extends Model_MongoAbstract
 	public function getText()
 	{
 		return $this->getValue('text');
+	}
+	
+	/**
+	 * Returns the timestamp for when the message was stored
+	 * 
+	 * @return int
+	 */
+	public function getTimestamp()
+	{
+		return $this->getValue('timestamp');
 	}
 	
 	/**

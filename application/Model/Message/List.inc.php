@@ -15,7 +15,7 @@ class Model_Message_List extends Model_MongoAbstract
 	
 	public function loadBySession($sessionId)
 	{
-		$result = $this->getDb()->messages->find(array('session_id' => $sessionId));
+		$result = $this->getDb()->messages->find(array('session_id' => $sessionId))->sort(array('timestamp' => -1));
 		$returnArray = array();
 		
 		foreach ($result as $id => $doc)

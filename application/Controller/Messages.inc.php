@@ -38,7 +38,7 @@ class Controller_Messages extends Controller_AuthAbstract
 	 */
 	private function addMessageHistoryToView()
 	{
-		$viewMessages = array();
+		$currentSession = $sessionsArray = array();
 		
 		$sessions = new Model_Session_List();
 		
@@ -48,14 +48,22 @@ class Controller_Messages extends Controller_AuthAbstract
 			
 			foreach ($messages->loadBySession($session->getId()) as $message)
 			{
-				$viewMessages[$session->getId()][] = array(
-					'id'     => $message->getId(),
-					'text'   => $message->getText(),
-					'sentBy' => $message->getFrom() == $this->getUser()->getPhoneNumber() ? 'you' : 'them',
+				$messageArray = array(
+					'id'		=> $message->getId(),
+					'text'		=> $message->getText(),
+					'sentBy'	=> $message->getFrom() == $this->getUser()->getPhoneNumber() ? 'you' : 'them',
+					'timestamp' => $message->getTimestamp(),
 				);
+				
+				if ($session->getId() == $this->getUser()->getSessionId()) {
+					$currentSession[$session->getId()][] = $messageArray;
+				}
+				else {
+					$sessionsArray[$session->getId()][] = $messageArray;
+				}
 			}
 		}
 		
-		$this->view->sessions = $viewMessages;
+		$this->view->sessions = $sessionsArray;
 	}
 }
