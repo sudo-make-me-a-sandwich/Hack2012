@@ -16,7 +16,7 @@
 				
 				<ul>
 					{foreach $messages as $message}
-						<li>{$message.id}: {$message.text}</li>
+						<li>{$message.sentBy}: {$message.text}</li>
 					{/foreach}
 				</ul>
 			</div>
