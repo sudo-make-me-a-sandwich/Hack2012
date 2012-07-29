@@ -104,6 +104,7 @@ class Model_Text_Incoming
 					$text->send();
 					
 					$message = new Model_Message();
+					$message->setFrom($this->_fromUser->getPhoneNumber());
 					$message->setText($this->_text);
 					$message->setSessionId($session->getId());
 					$message->save();
