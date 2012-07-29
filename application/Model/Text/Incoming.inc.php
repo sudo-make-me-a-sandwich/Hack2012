@@ -47,10 +47,8 @@ class Model_Text_Incoming
 			return $this->parseCommand();
 		}
 		else {
-			$this->createMessage();
+			return $this->createMessage();
 		}
-		
-		return false;
 	}
 	
 	/**
@@ -112,8 +110,6 @@ class Model_Text_Incoming
 					$message->save();
 				}
 			}
-			
-			return true;
 		}
 		else
 		{
@@ -123,6 +119,6 @@ class Model_Text_Incoming
 			$text->send();
 		}
 		
-		return false;
+		return true;
 	}
 }

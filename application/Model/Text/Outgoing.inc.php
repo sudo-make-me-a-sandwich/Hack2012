@@ -55,18 +55,16 @@ class Model_Text_Outgoing
 				$logger = new LSF_Utils_File_Log_Writer('/tmp/txts.log');
 				$logger->info('Sending message to: [' . $this->_to . '] ' . $this->_text);
 			}
-			else
-			{
-				$clockwork = new Clockwork(LSF_Config::get('mediaburst_api_key'));
 			
-				$response = $clockwork->send(array(
-					'from'	  => LSF_Config::get('txt_from'),
-					'to'	  => $this->_to,
-					'message' => $this->_text,
-				));
-				
-				return !empty($response['success']);
-			}
+			$clockwork = new Clockwork(LSF_Config::get('mediaburst_api_key'));
+		
+			$response = $clockwork->send(array(
+				'from'	  => LSF_Config::get('txt_from'),
+				'to'	  => $this->_to,
+				'message' => $this->_text,
+			));
+			
+			return !empty($response['success']);
 		}
 	}
 }
