@@ -22,6 +22,7 @@
 					<li>/fact</li>
 					<li>/catfact</li>
 					<li>/flirt</li>
+					<li>/help</li>
 				</ul>
 			</div>
 			
