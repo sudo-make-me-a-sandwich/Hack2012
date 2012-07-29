@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.8, created on 2012-07-29 01:18:20
+<?php /* Smarty version Smarty-3.1.8, created on 2012-07-29 01:35:31
          compiled from "/Users/sam/Sites/Hack2012/application/Views/Smarty/Templates/Controller/Default/index.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:7936927795013e282c4a734-05076730%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -13,7 +13,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'dea4803fcd3620f29a94917cbd8467d57a40c208' => 
     array (
       0 => '/Users/sam/Sites/Hack2012/application/Views/Smarty/Templates/layout.tpl',
-      1 => 1343505682,
+      1 => 1343522117,
       2 => 'file',
     ),
   ),
@@ -23,6 +23,10 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'version' => 'Smarty-3.1.8',
   'unifunc' => 'content_5013e282ca38c6_34754761',
+  'variables' => 
+  array (
+    'loggedIn' => 0,
+  ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_5013e282ca38c6_34754761')) {function content_5013e282ca38c6_34754761($_smarty_tpl) {?><!doctype html>
@@ -47,10 +51,10 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 				
 				<div class="nineCol last">
 					<ul class="nav">
-						<li><a href="/">Home</a></li>
 						<li><a href="/messages/">Messages</a></li>
 						<li><a href="/profile/">Profile</a></li>
 						<li><a href="/help/">Help</a></li>
+						<?php if ($_smarty_tpl->tpl_vars['loggedIn']->value){?><li><a href="/logout/">Logout</a></li><?php }?>
 					</ul>
 				</div>
 			</div>
