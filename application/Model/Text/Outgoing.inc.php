@@ -50,21 +50,21 @@ class Model_Text_Outgoing implements Model_IOutgoing
 	{
 		if ($this->_to && $this->_text)
 		{
-			if (LSF_Config::get('log_outbound_messages'))
+			$logger = new LSF_Utils_File_Log_Writer('/tmp/txts.log');
+			$logger->info('Sending message to: [' . $this->_to . '] ' . $this->_text);
+			
+			if (!LSF_Config::get('disable_message_sending'))
 			{
-				$logger = new LSF_Utils_File_Log_Writer('/tmp/txts.log');
-				$logger->info('Sending message to: [' . $this->_to . '] ' . $this->_text);
+				$clockwork = new Clockwork(LSF_Config::get('mediaburst_api_key'));
+			
+				$response = $clockwork->send(array(
+					'from'	  => LSF_Config::get('txt_from'),
+					'to'	  => $this->_to,
+					'message' => $this->_text,
+				));
+				
+				return !empty($response['success']);
 			}
-			
-			$clockwork = new Clockwork(LSF_Config::get('mediaburst_api_key'));
-		
-			$response = $clockwork->send(array(
-				'from'	  => LSF_Config::get('txt_from'),
-				'to'	  => $this->_to,
-				'message' => $this->_text,
-			));
-			
-			return !empty($response['success']);
 		}
 	}
 }
