@@ -519,6 +519,8 @@ button:hover {
 }
 
 .titleBar h5 {
+	font-size: 1em;
+	
 	-webkit-transition: all 0.2s ease-in;  
     -moz-transition: all 0.2s ease-in;  
     -o-transition: all 0.2s ease-in;  
@@ -644,5 +646,9 @@ button:hover {
 		width: 70%;
 		display: block;
 		float: left;
+	}
+	
+	.titleBar h5 {
+		font-size: 1.2em;
 	}
 }

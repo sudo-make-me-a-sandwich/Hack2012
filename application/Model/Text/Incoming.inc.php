@@ -47,7 +47,7 @@ class Model_Text_Incoming
 			return $this->parseCommand($handler);
 		}
 		else {
-			return $this->createMessage();
+			return $this->createMessage($handler);
 		}
 	}
 	
@@ -82,31 +82,41 @@ class Model_Text_Incoming
 	 * 
 	 * @return bool
 	 */
-	private function createMessage()
+	private function createMessage(Model_IOutgoing $handler=null)
 	{
 		if ($this->_fromUser->isInSession())
 		{
 			$session = $this->_fromUser->getSession();
-			$users = new Model_User_List();
 			
-			foreach ($users->findUsersActiveInSession($session->getId()) as $recipient)
-			{
-				if ($recipient->getId() != $this->_fromUser->getId())
-				{
-					$text = new Model_Text_Outgoing();
-					$text->setTo($recipient->getPhoneNumber());
-					$text->setText($this->_text);
-					$text->send();
-					
-					$message = new Model_Message();
-					$message->setFrom($this->_fromUser->getPhoneNumber());
-					$message->setText($this->_text);
-					$message->setSessionId($session->getId());
-					$message->save();
-				}
+			if ($session->isLonely()) {
+				$handler->setText('You are currently alone in your session. Waiting for someone to chat with.');
 			}
-			
-			return true;
+			else
+			{
+				$users = new Model_User_List();
+				
+				foreach ($users->findUsersActiveInSession($session->getId()) as $recipient)
+				{
+					if ($recipient->getId() != $this->_fromUser->getId())
+					{
+						$text = new Model_Text_Outgoing();
+						$text->setTo($recipient->getPhoneNumber());
+						$text->setText($this->_text);
+						$text->send();
+						
+						$message = new Model_Message();
+						$message->setFrom($this->_fromUser->getPhoneNumber());
+						$message->setText($this->_text);
+						$message->setSessionId($session->getId());
+						$message->save();
+					}
+				}
+				
+				return true;
+			}
+		}
+		else {
+			$handler->setText('You are not currently in a chat session. Use /chat to start.');
 		}
 		
 		return false;
