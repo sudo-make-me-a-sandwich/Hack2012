@@ -23,7 +23,11 @@ abstract class Controller_AuthAbstract extends LSF_Controller
 			return;
 		}
 		
-		return parent::start();
+		$return = parent::start();
+		
+		$this->view->loggedIn = true;
+		
+		return $return;
 	}
 	
 	/**

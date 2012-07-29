@@ -256,6 +256,12 @@ button {
 	font-size: 1em;
 	line-height: 1em;
 	text-align: center;
+	
+	-moz-transition: all 0.2s ease-out;
+	-webkit-transition: all 0.2s ease-out;
+	-o-transition: all 0.2s ease-out;
+	-ms-transition: all 0.2s ease-out;
+	transition: all 0.2s ease-out;
 }
 
 button:hover {

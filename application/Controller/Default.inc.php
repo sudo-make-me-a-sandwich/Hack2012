@@ -26,7 +26,9 @@ class Controller_Default extends LSF_Controller
 			 * Temp code
 			 */
 			$user = new Model_User();
-			if (!$user->loadByPhonenumber($form->getElementValue('phonenumber'))) {
+			$user->loadByPhonenumber($form->getElementValue('phonenumber'));
+			
+			if (!$form->getElementValue('password')) {
 				$this->redirect('register', null, null, '?phonenumber=' . $form->getElementValue('phonenumber'));
 			}
 			else
