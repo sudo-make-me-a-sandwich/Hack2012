@@ -59,13 +59,17 @@ class Model_Session extends Model_MongoAbstract
 	public function getUsers()
 	{
 		$returnArray = array();
+		$users = $this->getValue('users');
 		
-		foreach ($this->getValue('users') as $userId)
+		if (is_array($users))
 		{
-			$user = new Model_User();
-			
-			if ($user->load($userId)) {
-				$returnArray[] = $user;
+			foreach ($users as $userId)
+			{
+				$user = new Model_User();
+				
+				if ($user->load($userId)) {
+					$returnArray[] = $user;
+				}
 			}
 		}
 		
