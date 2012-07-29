@@ -27,6 +27,10 @@ abstract class Controller_AuthAbstract extends Controller_BaseAbstract
 		
 		$this->view->loggedIn = true;
 		
+		$this->view->profile = array(
+			'number' => $this->getUser()->getPhoneNumber(),
+		);
+		
 		return $return;
 	}
 	
