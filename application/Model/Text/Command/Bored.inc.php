@@ -46,6 +46,6 @@ class Model_Text_Command_Bored extends Model_Text_Command_BaseAbstract
 	 */
 	protected function getResponse()
 	{
-		return 'Left session';
+		return 'Shame you got bored. Type /chat to join someone new.';
 	}
 }
