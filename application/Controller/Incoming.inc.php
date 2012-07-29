@@ -19,8 +19,8 @@ class Controller_Incoming extends LSF_Controller
 	{
 		$this->setPresenterName('none');
 		
-		$from = $this->getRequest()->getPostVar('from');
-		$text = $this->getRequest()->getPostVar('content');
+		$from = $this->getRequest()->getGetVar('from');
+		$text = $this->getRequest()->getGetVar('content');
 		
 		if (!empty($from) && !empty($text))
 		{
