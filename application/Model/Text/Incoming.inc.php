@@ -94,8 +94,18 @@ class Model_Text_Incoming
 		
 		if (!$session->isLonely())
 		{
-			$message = new Model_Text_Outgoing();
-			return $message->send();
+			foreach ($session->getUsers() as $recipient)
+			{
+				if ($recipient->getId() != $this->_fromUser->getId())
+				{
+					$message = new Model_Text_Outgoing();
+					$message->setTo($recipient->getPhoneNumber());
+					$message->setText($this->_text);
+					$message->send();
+				}
+			}
+			
+			return true;
 		}
 		
 		return false;

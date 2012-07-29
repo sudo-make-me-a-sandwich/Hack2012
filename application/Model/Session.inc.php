@@ -37,6 +37,7 @@ class Model_Session extends Model_MongoAbstract
 		
 		$users[] = $user->getId();
 		$this->setValue('users', $users);
+		$this->setValue('users_count', count($users));
 	}
 	
 	/**
@@ -47,5 +48,26 @@ class Model_Session extends Model_MongoAbstract
 	public function isLonely()
 	{
 		return count($this->getValue('users')) === 1;
+	}
+	
+	/**
+	 * Returns an array of user objects
+	 * 
+	 * @return array
+	 */
+	public function getUsers()
+	{
+		$returnArray = array();
+		
+		foreach ($this->getValue('users') as $userId)
+		{
+			$user = new Model_User();
+			
+			if ($user->load($userId)) {
+				$returnArray[] = $user;
+			}
+		}
+		
+		return $returnArray;
 	}
 }

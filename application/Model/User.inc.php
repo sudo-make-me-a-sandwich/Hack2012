@@ -131,12 +131,12 @@ class Model_User extends Model_MongoAbstract
 	{
 		$sessionList = new Model_Session_List();
 		
-		if (!$session = $sessionList->findAvailableSession())
-		{
+		if (!$session = $sessionList->findAvailableSession()) {
 			$session = new Model_Session();
-			$session->addUser($this);
-			$session->save();
 		}
+		
+		$session->addUser($this);
+		$session->save();
 		
 		$this->setValue('session_id', $session->getId());
 		$this->save();
