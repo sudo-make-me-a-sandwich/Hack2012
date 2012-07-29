@@ -20,6 +20,8 @@
 					<li>/insult</li>
 					<li>/drink</li>
 					<li>/fact</li>
+					<li>/catfact</li>
+					<li>/flirt</li>
 				</ul>
 			</div>
 			
