@@ -15,7 +15,7 @@
 			</div>
 			
 			<div class="fiveCol last">
-				<img src="/images/help.jpg" alt="" />
+				<img src="/images/help.jpg" alt="looking for some help?" />
 			</div>
 		</div>
 	</div>
