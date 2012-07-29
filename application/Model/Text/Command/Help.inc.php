@@ -15,6 +15,6 @@ class Model_Text_Command_Help extends Model_Text_Command_BaseAbstract
 	 */
 	protected function getResponse()
 	{
-		return 'Some help text';
+		return 'Send /chat to talk to someone, and /bored to leave the current chat session. You can also send one of /joke, /insult, /drink, /fact, /catfact, flirt or /help (duh!)';
 	}
 }

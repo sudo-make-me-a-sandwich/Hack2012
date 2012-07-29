@@ -13,16 +13,16 @@
 		<div class="content">
 			<div class="sevenCol">
 				<h3>WTF?</h3>
-				<p>/txt is a way to talk to a random person.</p>
+				<p>/txt lets you chat with random people. It also does some other <a href="/help/">funky things</a>.</p>
 				
 				<h3>How?</h3>
-				<p>Text /chat to {$txtNumber}</p>
+				<p>Simply text /chat to {$txtNumber} to begin.</p>
 				
 				<h3>Who?</h3>
-				<p>Well it could be anyone, that's the fun.</p>
+				<p>Well it could be anyone, that's the fun!</p>
 				
 				<h3>Bored?</h3>
-				<p>Don't like the person your talking to? <br />Just text /bored and you will get someone new.</p>
+				<p>Don't like the person your talking to? <br />Just text /bored and you'll get someone new.</p>
 			</div>
 			
 			<div class="fiveCol last">

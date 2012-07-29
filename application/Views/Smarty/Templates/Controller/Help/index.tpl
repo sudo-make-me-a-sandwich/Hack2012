@@ -8,10 +8,11 @@
 				<p>Just text /chat to {$txtNumber}</p>
 				
 				<h3>How do I get someone new / more interesting?</h3>
-				<p>Just reply in your convosation with "/bored" and you'll get someone new, hopefully more interesting.</p>
+				<p>Just reply in your conversation with "/bored" and you'll get someone new, hopefully they'll be more interesting/entertaining.</p>
 				
 				<h3>What else can I do?</h3>
-				Try texting one of these, I think you can work out what they do.
+				Try texting one or more of these commands, you can probably guess what they might do. (This won't interrupt your current chat session).
+				
 				<ul class="padding">
 					<li>/joke</li>
 					<li>/insult</li>
