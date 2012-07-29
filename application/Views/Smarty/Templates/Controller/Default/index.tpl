@@ -13,7 +13,7 @@
 		<div class="content">
 			<div class="sevenCol">
 				<h3>How?</h3>
-				<p>Text join to xxxxx xxx xxx</p>
+				<p>Text /join to {$txtNumber}</p>
 				<p>You will the be put in contact with someone.</p>
 				
 				<h3>Who?</h3>
