@@ -29,4 +29,27 @@ class Model_Session_List extends Model_MongoAbstract
 			return $session;
 		}
 	}
+	
+	/**
+	 * Loads a list of chat sessions by user ID
+	 * 
+	 * @param string $userId
+	 * @return void
+	 */
+	public function loadByUser($userId)
+	{
+		$result = $this->getDb()->sessions->find(array('users' => $userId));
+		$returnArray = array();
+		
+		foreach ($result as $id => $doc)
+		{
+			$session = new Model_Session();
+
+			if ($session->load($id)) {
+				$returnArray[] = $session;
+			}
+		}
+		
+		return $returnArray;
+	}
 }

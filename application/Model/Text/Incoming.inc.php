@@ -98,10 +98,15 @@ class Model_Text_Incoming
 			{
 				if ($recipient->getId() != $this->_fromUser->getId())
 				{
-					$message = new Model_Text_Outgoing();
-					$message->setTo($recipient->getPhoneNumber());
+					$text = new Model_Text_Outgoing();
+					$text->setTo($recipient->getPhoneNumber());
+					$text->setText($this->_text);
+					$text->send();
+					
+					$message = new Model_Message();
 					$message->setText($this->_text);
-					$message->send();
+					$message->setSessionId($session->getId());
+					$message->save();
 				}
 			}
 			

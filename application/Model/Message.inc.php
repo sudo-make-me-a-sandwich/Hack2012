@@ -40,4 +40,15 @@ class Model_Message extends Model_MongoAbstract
 	{
 		return $this->getValue('text');
 	}
+	
+	/**
+	 * Set the session ID for this message
+	 * 
+	 * @param string $sessionId
+	 * @return void
+	 */
+	public function setSessionId($sessionId)
+	{
+		$this->setValue('session_id', $sessionId);
+	}
 }

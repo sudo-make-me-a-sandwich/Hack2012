@@ -11,6 +11,14 @@
 				{else}
 					{$form}
 				{/if}
+				
+				<h2>Message history:</h2>
+				
+				<ul>
+					{foreach $messages as $message}
+						<li>{$message.id}: {$message.text}</li>
+					{/foreach}
+				</ul>
 			</div>
 		</div>
 	</div>
