@@ -16,7 +16,7 @@
 				<p>/txt is a way to talk to a random person.</p>
 				
 				<h3>How?</h3>
-				<p>Text /join to {$txtNumber}</p>
+				<p>Text /chat to {$txtNumber}</p>
 				
 				<h3>Who?</h3>
 				<p>Well it could be anyone, that's the fun.</p>
