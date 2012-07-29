@@ -7,7 +7,7 @@
  * $Id$
  */
 
-class Controller_Profile extends LSF_Controller
+class Controller_Profile extends Controller_AuthAbstract
 {
 	/**
 	 * Default index action

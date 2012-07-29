@@ -20,10 +20,10 @@
 				
 				<div class="nineCol last">
 					<ul class="nav">
-						<li><a href="/">Home</a></li>
 						<li><a href="/messages/">Messages</a></li>
 						<li><a href="/profile/">Profile</a></li>
 						<li><a href="/help/">Help</a></li>
+						{if $loggedIn}<li><a href="/logout/">Logout</a></li>{/if}
 					</ul>
 				</div>
 			</div>
