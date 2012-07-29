@@ -19,11 +19,18 @@ class Model_Text_Command_Bored extends Model_Text_Command_BaseAbstract
 			if ($user->getId() != $this->getUser()->getId())
 			{
 				$user->clearSession();
-				$user->findSession(); 
+				$session = $user->findSession(); 
 				
 				$text = new Model_Text_Outgoing();
 				$text->setTo($user->getPhoneNumber());
-				$text->setText("The other person got bored. :-( You're now waiting for a new partner.");
+
+				if ($session->isLonely()) {
+					$text->setText("The other person got bored. :-( You're now waiting for a new partner.");
+				}
+				else {
+					$text->setText("The other person got bored. :-( You've been paired with someone new. Please send a new message and try to be more interesting this time!");
+				}
+				
 				$text->send();
 			}
 		}
