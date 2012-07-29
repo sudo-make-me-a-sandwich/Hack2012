@@ -454,6 +454,18 @@ button:hover {
 /*----------------------------------------------------------------------------------------------------------------*\
 	MESSAGES
 \*----------------------------------------------------------------------------------------------------------------*/
+.sendMessgeForm {
+	margin-bottom: 20px;
+}
+
+.sendMessgeForm label {
+	display: none;
+}
+
+.messageHistory h2 {
+	margin-bottom: 10px;
+}
+
 .messages {
     position: relative;
 }
