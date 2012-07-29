@@ -516,6 +516,8 @@ button:hover {
     transition: all 0.2s ease-in; 
     
     cursor: pointer;
+    
+    position: relative;
 }
 
 .titleBar h5 {
