@@ -56,7 +56,7 @@ class Controller_Messages extends Controller_AuthAbstract
 				);
 				
 				if ($session->getId() == $this->getUser()->getSessionId()) {
-					$currentSession[$session->getId()][] = $messageArray;
+					$currentSession[] = $messageArray;
 				}
 				else {
 					$sessionsArray[$session->getId()][] = $messageArray;

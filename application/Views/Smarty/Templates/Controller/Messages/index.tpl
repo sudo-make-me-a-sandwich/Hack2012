@@ -7,6 +7,12 @@
 				<div class="currentMessage">
 				</div>
 				
+				<ul>
+					{foreach $currentSession as $message}
+						<li class="{$message.sentBy}">{$message.sentBy} ({$message.timestamp|date_format}): {$message.text}</li>
+					{/foreach}
+				</ul>
+				
 				<div class="sendMessgeForm">
 					{if $messageSent}
 						Your message was sent, dufus.
@@ -29,7 +35,7 @@
 				                
 				                <ul>
 									{foreach $messages as $message}
-										<li class="{$message.sentBy}">{$message.sentBy}: {$message.text}</li>
+										<li class="{$message.sentBy}">{$message.sentBy} ({$message.timestamp|date_format}): {$message.text}</li>
 									{/foreach}
 								</ul>
 				            </div>
