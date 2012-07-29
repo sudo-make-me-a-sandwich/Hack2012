@@ -16,8 +16,6 @@ class Controller_Messages extends Controller_AuthAbstract
 	 */
 	protected function indexAction()
 	{
-		$this->addMessageHistoryToView();
-		
 		$form = new Form_Message();
 		$this->view->form = $form->render();
 		
@@ -29,6 +27,8 @@ class Controller_Messages extends Controller_AuthAbstract
 			
 			$this->view->messageSent = $text->process();
 		}
+		
+		$this->addMessageHistoryToView();
 	}
 	
 	/**
