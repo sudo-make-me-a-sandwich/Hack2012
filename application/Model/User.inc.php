@@ -10,7 +10,7 @@ class Model_User extends Model_MongoAbstract
 {
 	public function __construct()
 	{
-		parent::__construct('user');
+		parent::__construct('users');
 	}
 	
 	/**
@@ -97,7 +97,17 @@ class Model_User extends Model_MongoAbstract
 	 */
 	public function isInSession()
 	{
-		return (bool)$this->getValue('session_id');
+		return (bool)$this->getSessionId();
+	}
+	
+	/**
+	 * Returns the current session ID
+	 * 
+	 * @return string
+	 */
+	public function getSessionId()
+	{
+		return $this->getValue('session_id');
 	}
 	
 	/**
@@ -109,6 +119,27 @@ class Model_User extends Model_MongoAbstract
 	{
 		$session = new Model_Session();
 		$session->load($this->getSessionId());
+		return $session;
+	}
+	
+	/**
+	 * Finds an available text partner (if it can)
+	 * 
+	 * @return Model_Session
+	 */
+	public function findPartner()
+	{
+		$sessionList = new Model_Session_List();
+		
+		if (!$session = $sessionList->findAvailableSession())
+		{
+			$session = new Model_Session();
+			$session->addUser($this);
+			$session->save();
+		}
+		
+		$this->setValue('session_id', $session->getId());
+		$this->save();
 		
 		return $session;
 	}

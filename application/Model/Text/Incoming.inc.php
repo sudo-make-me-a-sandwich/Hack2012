@@ -85,18 +85,17 @@ class Model_Text_Incoming
 	 */
 	private function createMessage()
 	{
-		if (!$this->_fromUser->isInSession())
-		{
-			/**
-			 * Look for an existing single-user session (who's been waiting longest)
-			 * If found, add to session, send 2-way introductory messages
-			 * If not, create new session and wait.
-			 */
-			
-			
+		if (!$this->_fromUser->isInSession()) {
+			$session = $this->_fromUser->findPartner();
 		}
 		else {
-			// Send message to session partner
+			$session = $this->_fromUser->getSession();
+		}
+		
+		if (!$session->isLonely())
+		{
+			$message = new Model_Text_Outgoing();
+			return $message->send();
 		}
 		
 		return false;

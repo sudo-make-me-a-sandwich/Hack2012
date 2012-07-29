@@ -30,7 +30,7 @@ abstract class Model_MongoAbstract
 	 */
 	public function getId()
 	{
-		return $this->getValue('_id');
+		return (string)$this->getValue('_id');
 	}
 	
 	/**
@@ -69,7 +69,7 @@ abstract class Model_MongoAbstract
 	 */
 	public function save()
 	{
-		if ($this->getDb()->{$this->_collection}->insert($this->getData())) {
+		if ($this->getDb()->{$this->_collection}->save($this->getData())) {
 			return new LSF_Validation_Result();
 		}
 	}

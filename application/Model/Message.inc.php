@@ -15,7 +15,7 @@ class Model_Message extends Model_MongoAbstract
 	 */
 	public function __construct()
 	{
-		parent::__construct('message');
+		parent::__construct('messages');
 	}
 	
 	/**
