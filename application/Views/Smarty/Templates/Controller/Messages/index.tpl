@@ -15,11 +15,7 @@
 						</ul>
 						
 						<div class="sendMessgeForm">
-							{if $messageSent}
-								Your message was sent, dufus.
-							{else}
-								{$form}
-							{/if}
+							{$form}
 						</div>
 		            </div>
 				</div>
