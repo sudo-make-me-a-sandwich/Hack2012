@@ -13,6 +13,7 @@
 							{$response}
 						</div>
 					{/if}
+					
 					<div class="messageGroup">
 		                <ul>
 							{foreach $currentSession as $message}
@@ -35,7 +36,7 @@
 				            	<div class="titleBar">
 				                	<div class="icon">+</div>
 				                    
-				                    <h5>{$sessionId}</h5>
+				                    <h5>From {$messages[0].timestamp|date_format:"%d %B %Y"} to {$messages[$messages|count-1].timestamp|date_format:"%d %B %Y"}</h5>
 				                </div>
 				                
 				                <ul>
