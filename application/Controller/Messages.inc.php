@@ -48,7 +48,7 @@ class Controller_Messages extends Controller_AuthAbstract
 			
 			foreach ($messages->loadBySession($session->getId()) as $message)
 			{
-				$viewMessages[] = array(
+				$viewMessages[$session->getId()][] = array(
 					'id'     => $message->getId(),
 					'text'   => $message->getText(),
 					'sentBy' => $message->getFrom() == $this->getUser()->getPhoneNumber() ? 'you' : 'them',
@@ -56,6 +56,6 @@ class Controller_Messages extends Controller_AuthAbstract
 			}
 		}
 		
-		$this->view->messages = $viewMessages;
+		$this->view->sessions = $viewMessages;
 	}
 }
