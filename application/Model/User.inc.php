@@ -123,6 +123,17 @@ class Model_User extends Model_MongoAbstract
 	}
 	
 	/**
+	 * Clear the current session
+	 * 
+	 * @return void
+	 */
+	public function clearSession()
+	{
+		$this->setValue('session_id', null);
+		$this->save();
+	}
+	
+	/**
 	 * Finds an available text partner (if it can)
 	 * 
 	 * @return Model_Session

@@ -9,7 +9,7 @@
 abstract class Model_Text_Command_BaseAbstract
 {
 	private
-		$_fromNumber,
+		$_fromUser,
 		$_input;
 	
 	/**
@@ -20,24 +20,31 @@ abstract class Model_Text_Command_BaseAbstract
 	public function run()
 	{
 		$outgoingText = new Model_Text_Outgoing();
-		$outgoingText->setTo($this->_fromNumber);
+		$outgoingText->setTo($this->_fromUser->getPhoneNumber());
 		$outgoingText->setText($this->getResponse());
 		return $outgoingText->send();
 	}
 	
 	/**
-	 * Set the "from" phone number
+	 * Set the "from" user
 	 * 
-	 * @param string $number
+	 * @param Model_User $user
 	 * @return Model_Text_Command_BaseAbstract
 	 */
-	public function setFrom($number)
+	public function setFromUser(Model_User $user)
 	{
-		if (is_numeric($number)) {
-			$this->_fromNumber = $number;
-		}
-		
+		$this->_fromUser = $user;
 		return $this;
+	}
+	
+	/**
+	 * Returns the from user object
+	 * 
+	 * @return Model_User
+	 */
+	public function getUser()
+	{
+		return $this->_fromUser;
 	}
 	
 	/**
