@@ -34,7 +34,8 @@ class Controller_Register extends LSF_Controller
 			$user->save();
 			
 			LSF_Session::GetSession()->phonenumber = $form->getElementValue('phonenumber');
-		
+			LSF_Session::GetSession()->password = $user->getPassword();
+			
 			$this->redirect('messages');
 		}
 	}

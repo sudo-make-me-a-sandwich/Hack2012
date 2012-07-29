@@ -65,6 +65,16 @@ class Model_User extends Model_MongoAbstract
 	}
 	
 	/**
+	 * Returns the user's password hash
+	 * 
+	 * @return string
+	 */
+	public function getPassword()
+	{
+		return $this->getValue('password');
+	}
+	
+	/**
 	 * Check the users credentials
 	 * 
 	 * @param string $password
